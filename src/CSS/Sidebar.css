@@ -1,0 +1,79 @@
+.sidebar {
+display: flex;
+position: fixed;
+width: 18%;
+height: 1101px;
+flex-direction: column;
+align-items: flex-start;
+gap: 100px;
+flex-shrink: 0;
+background: #4FB3BF;
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+.user-detail {
+    color:  #005662;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 4%;
+}
+.profile-name{
+    margin-left: -23%;
+}
+.wallet-balance {
+    margin-left: -12%;
+}
+.sidebar-sticky {
+    width: 100%;
+}
+.sidebar-list {
+    list-style: none;
+    padding-top: 20%;
+    /* margin-left: 5%; */
+    text-align: left;
+    align-items: center;
+}
+li {
+    padding-bottom: 13%;
+}
+li a {
+    list-style: none;
+    color:  #005662;
+    font-family: Fira Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    width: 100%;
+    
+}
+.icon {
+    color: #005662; 
+    font-size: 20px;
+    padding-right: 5%;
+  }
+  .profile-icon {
+    color: #005662;
+    font-size: 45px ; 
+    padding-top: 8px;
+    margin-left: -10%;
+  }
+  
+  /* Mobile View */
+  @media screen and (max-width: 768px) {
+    .web {
+        display: none;
+    }
+    .mobile-list {
+        padding-top: 15% !important;
+    }
+  }
