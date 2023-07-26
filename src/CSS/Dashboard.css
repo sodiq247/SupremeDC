@@ -15,9 +15,41 @@ box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .dashboard-child {
   padding: 5% 3%;
+  color: #005662;
 }
+.status {
+  margin-bottom: 5% !important;
+
+}
+.bank-list {
+  margin: 0% 2%;
+}
+.bank-list a {
+  list-style: none;
+    color:  #005662 ;
+    text-decoration: none !important;
+
+    font-family: Fira Sans;
+    /* font-size: 20px; */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.banks {
+  display: flex;
+  flex-direction: row;
+  margin: 1%;
+    padding: 1.5px;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-left: 3px solid  #4FB3BF;
+    width: 23%;
+    align-items: center;
+}
+
 .bank-acct {
-  padding: 4%;
+  padding:2% 4%;
     text-align: left;
     border-radius: 5px;
     background: #FFF;
@@ -35,6 +67,10 @@ box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 .gtco-pic {
   width: 20%;
     margin-left: -4%;
+}
+.gtco-border {
+  border-left: 3px solid  rgb(255 65 0);
+  color:rgb(255 65 0) !important ;
 }
 .transaction-items {
   display: flex;
@@ -111,3 +147,12 @@ box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     line-height: normal;
 }
 
+/* Mobile View Start */
+@media screen and (max-width:748px) {
+  .dashboard, .notification-div, .wallet-div, .services {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  
+}
+/* Mobile View End */
