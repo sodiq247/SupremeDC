@@ -15,11 +15,14 @@ import {
 	faRightFromBracket,
 	faCircleUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+// import Button from "react-bootstrap/Button";
 
-const MobileSidebar = () => {
+
+const Sidebar = () => {
 	return (
-		<side className="sidebar ">
-			<div className=" ">
+		<side className="sidebar web">
+			<div className="sidebar-sticky ">
 				<div className="profile">
 					<div className="profile-pic">
 						<FontAwesomeIcon icon={faCircleUser} className="profile-icon" />
@@ -30,66 +33,66 @@ const MobileSidebar = () => {
 					</div>
 					<hr />
 				</div>
-				<ul className="sidebar-list mobile-list">
+				<ul className="sidebar-list">
 					<li>
-						<a className="active" href="/user/dashboard">
+						<Link to='/'>
 							<FontAwesomeIcon icon={faHouseChimney} className="icon" />
 							Dashboard
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/BuyAirtime'>
 							<FontAwesomeIcon icon={faPhoneVolume} className="icon" />
 							Buy Airtime
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/BuyData'>
 							<FontAwesomeIcon icon={faSignal} className="icon" />
 							Buy Data
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/electricity">
+						<Link to='/Electricity'>
 							<FontAwesomeIcon icon={faLightbulb} className="icon" />
 							Electricity
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/TVSubscription'>
 							<FontAwesomeIcon icon={faTv} className="icon" />
 							TV Subscription
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/api-keys">
+						<Link to='/FundWallet'>
 							<FontAwesomeIcon icon={faWallet} className="icon" />
 							Fund Wallet
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="#">
+						<Link to='/Prices'>
 							<FontAwesomeIcon icon={faTag} className="icon" />
 							Prices
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/Account'>
 							<FontAwesomeIcon icon={faUser} className="icon" />
 							Account
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/Settings'>
 							<FontAwesomeIcon icon={faGear} className="icon" />
 							Settings
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/user/airtime">
+						<Link to='/Logout'>
 							<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							Log Out
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>
@@ -97,4 +100,4 @@ const MobileSidebar = () => {
 	);
 };
 
-export default MobileSidebar;
+export default Sidebar;

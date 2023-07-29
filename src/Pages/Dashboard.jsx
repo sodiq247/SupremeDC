@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 import "../CSS/Dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faHouseChimney,
 	faPhoneVolume,
 	faSignal,
 	faLightbulb,
@@ -16,13 +15,19 @@ import {
 	faUser,
 	faGear,
 	faRightFromBracket,
-	faCircleUser,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
 import gtco from "../Assets/images/gtco";
+import { Link } from "react-router-dom";
+import Sidebar from "../Components/Sidebar";
+import Header from "../Components/Header";
+// import BuyData from "./BuyData";
 
 const Dashboard = () => {
 	return (
+		<div>
+			<Header />
+			<Sidebar />
 		<div className="dashboard-main">
 			<div className="dashboard">
 				<Container className="dashboard-child">
@@ -147,85 +152,87 @@ const Dashboard = () => {
 			<div className="services">
 				<Container className="">
 					<Row>
-						<a href="/user/airtime" className="service">
+					{/* <Link to="/BuyData">Buy Airtime</Link> */}
+						<Link to="/BuyAirTime" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faPhoneVolume} className="icon" />
 							</Col>
 							Buy Airtime
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/BuyData" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faSignal} className="icon" />
 							</Col>
 							Buy Data
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/Electricity" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faLightbulb} className="icon" />
 							</Col>
 							Electricity
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/TvSubscription" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faTv} className="icon" />
 							</Col>
 							TV Subscription
-						</a>
+						</Link>
 					</Row>
 					<Row>
-						<a href="/user/airtime" className="service">
+						<Link to="/FundWallet" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faWallet} className="icon" />
 							</Col>
 							Fund Wallet
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/Prices" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faTag} className="icon" />
 							</Col>
 							Prices
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/Account" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faUser} className="icon" />
 							</Col>
 							Account
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/Settings" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faGear} className="icon" />
 							</Col>
 							Settings
-						</a>
+						</Link>
 					</Row>
 					<Row>
-						<a href="/user/airtime" className="service">
+						<Link to="/Logout" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							</Col>
 							Log Out
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/BuyAirTime" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							</Col>
 							Log Out
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/BuyAirTime" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							</Col>
 							Log Out
-						</a>
-						<a href="/user/airtime" className="service">
+						</Link>
+						<Link to="/BuyAirTime" className="service">
 							<Col lg={3} xs={6} sm={4}>
 								<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							</Col>
 							Log Out
-						</a>
+						</Link>
 					</Row>
 				</Container>
 			</div>
+		</div>
 		</div>
 	);
 };

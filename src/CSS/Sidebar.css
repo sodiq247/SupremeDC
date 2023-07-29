@@ -45,8 +45,8 @@ li {
     padding-bottom: 13%;
 }
 li a {
-    list-style: none;
-    color:  #005662;
+    list-style: none !important;
+    color:  #005662 !important;
     font-family: Fira Sans;
     font-size: 20px;
     font-style: normal;

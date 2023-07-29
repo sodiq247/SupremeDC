@@ -18,7 +18,7 @@ function Header() {
 	const handleShow = () => setShow(true);
 
 	return (
-		<Navbar className="main">
+		<Navbar className="main ">
 			<Container>
 				<Button onClick={handleShow} className="mobile faBars-btn">
 					<FontAwesomeIcon icon={faBars} className="faBars" />
