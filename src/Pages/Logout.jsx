@@ -10,7 +10,7 @@ function Logout() {
     <div>
       
       <Container className='BuyData-main logout-main'>
-		<div className='BuyData-submain Logout-submain'>
+		<div className='BuyData-submain Form-submain'>
       <Row>
         <Col sm={8} xs={{ order: '' }} className='BuyData-form BuyAirtime' >
 		<Form>
@@ -25,7 +25,7 @@ function Logout() {
         <Form.Control type="password" placeholder="........" className='mb-3' />
       </Form.Group>
     {/* <link to='/Logout'>Forgot Password ?</link> */}
-	  <Link to="/" ><Button className='Buy-now-btn'>Login</Button>{" "}</Link>
+	  <Link to="/Dashboard" ><Button className='Buy-now-btn'>Login</Button>{" "}</Link>
     {/* <div>Don't have an account yet ?<link to='/Logout'>Sign Up</link></div> */}
 
     </Form>

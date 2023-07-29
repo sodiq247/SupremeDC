@@ -31,6 +31,15 @@
   margin-top: 6%;
 }
 
+.Form-submain {
+  text-align: left;
+
+}
+.form-label {
+  margin-bottom: .5rem;
+  margin-left: 2%;
+}
+
 /* BuyAirtime Page Start */
 .BuyAirtime {
   padding-left: 20%;
@@ -81,6 +90,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .pricing {
   color: #4FB3BF;
@@ -152,5 +163,12 @@
 }
   /* Logout mobile view end */
 
+  /* Account mobile view Start */
+  .Price {
+    font-size: 16px;
+    padding-top: 5%;
+    padding-bottom: 10%;
+  }
+  /* Account mobile view end */
 }
 /* Mobile View End */

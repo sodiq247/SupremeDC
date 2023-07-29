@@ -122,7 +122,7 @@ const Dashboard = () => {
 			<div className="notification-div">
 				<Container className="">
 					<Row>
-						<Col lg={4} xs={6} sm={4} className="notification-items">
+						<Col lg={4}  className="notification-items">
 							<h3>Notifications</h3>
 							<p>
 								Payment successful you account has been credited with sum of
@@ -130,7 +130,7 @@ const Dashboard = () => {
 							</p>
 							<Button variant="info">all message</Button>{" "}
 						</Col>
-						<Col lg={4} xs={6} sm={4} className="notification-items">
+						<Col lg={4}  className="notification-items">
 							<h3>FAQs:</h3>
 							<p>
 								Please go through them to have a better knowledge of this
@@ -138,7 +138,7 @@ const Dashboard = () => {
 							</p>
 							<Button variant="secondary">FAQ?</Button>{" "}
 						</Col>
-						<Col lg={4} xs={6} sm={4} className="notification-items">
+						<Col lg={4}  className="notification-items">
 							<h3>Support Team:</h3>
 							<p>
 								Have anything to say to us? Please contact our Support Team on

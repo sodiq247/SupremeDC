@@ -13,7 +13,7 @@ function BuyData() {
       <Header />
       <Sidebar />
       <Container className='BuyData-main'>
-		<div className='BuyData-submain'>
+		<div className='BuyData-submain Form-submain'>
       <Row>
         <Col sm={8} xs={{ order: '' }} className='BuyData-form BuyAirtime' >
 		<Form>

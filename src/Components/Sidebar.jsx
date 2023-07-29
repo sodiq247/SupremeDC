@@ -35,7 +35,7 @@ const Sidebar = () => {
 				</div>
 				<ul className="sidebar-list">
 					<li>
-						<Link to='/'>
+						<Link to='/Dashboard'>
 							<FontAwesomeIcon icon={faHouseChimney} className="icon" />
 							Dashboard
 						</Link>
@@ -89,7 +89,7 @@ const Sidebar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to='/Logout'>
+						<Link to='/'>
 							<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							Log Out
 						</Link>

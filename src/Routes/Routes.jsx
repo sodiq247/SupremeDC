@@ -13,7 +13,8 @@ import Logout from '../Pages/Logout'
 const Routers = () => {
     return (
         <Routes>
-            <Route path="/" exact Component={Dashboard} />
+            <Route path="/" exact Component={Logout} />
+            <Route path="/Dashboard"  Component={Dashboard} />
             <Route path="/BuyData" Component={BuyData} />
             <Route path="/BuyAirtime" Component={BuyAirtime} />
             <Route path="/Electricity" Component={Electricity} />
@@ -22,7 +23,6 @@ const Routers = () => {
             <Route path="/Account" Component={Account} />
             <Route path="/Prices" Component={Prices} />
             <Route path="/FundWallet" Component={FundWallet} />
-            <Route path="/Logout" Component={Logout} />
 
             
         </Routes>

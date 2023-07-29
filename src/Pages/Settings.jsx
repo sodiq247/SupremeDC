@@ -14,24 +14,18 @@ function Settings() {
       <Header />
       <Sidebar />
       <Container className='BuyData-main'>
-		<div className='BuyData-submain'>
+		<div className='BuyData-submain Form-submain'>
       <Row>
         <Col sm={8} xs={{ order: '' }} className='BuyData-form BuyAirtime' >
 		<Form>
 		<Form.Label className='label'>Bank Name</Form.Label>
 		<Form.Select aria-label="Default select example" className='mb-3'>
       <option></option>
-      <option value="1">Ikeja Electric</option>
-      <option value="2">Eko Electric</option>
-      <option value="3">Abuja Electric</option>
-      <option value="4">Kano Electric</option>
-      <option value="5">Enugu Electric</option>
-      <option value="6">Port Harcourt Electric</option>
-      <option value="7">Ibadan Electric</option>
-      <option value="8">Kaduna Electric</option>
-      <option value="9">Yola Electric</option>
-      <option value="10">Jos Electric</option>
-      <option value="11">Benin Electric</option>
+      <option value="1">Access Bank</option>
+      <option value="2">Gtbank</option>
+      <option value="3">Zenith Bank</option>
+      <option value="4">Other Banks...</option>
+      
     </Form.Select>
     <Form.Group >
 	  <Form.Label className='label phone-label'>Account Name</Form.Label>

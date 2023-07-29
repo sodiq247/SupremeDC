@@ -1,10 +1,6 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
 import '../CSS/Buydata.css'
-import Button from "react-bootstrap/Button";
-import { Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 import Header from '../Components/Header';
 import Sidebar from '../Components/Sidebar';
 
@@ -14,35 +10,40 @@ function Account() {
       <Header />
       <Sidebar />
       <Container className='BuyData-main'>
-		<div className='BuyData-submain'>
-      <Row>
-        <Col sm={8} xs={{ order: '' }} className='BuyData-form BuyAirtime' >
-          <div className='Account'>
-            <div>
-              <ul className='Account-detail'>
-                <li>Username</li>
-                <li>Phone Number</li>
-                <li>Email</li>
-                <li>Bank Name</li>
-                <li>Account Number</li>
-              </ul>
-              <Link to="/Settings" className='update-acct'>Update</Link>
+		<div className='BuyData-submain Price pricing'>
+    <Table striped bordered hover>
+     <tbody>
+        <tr>
+          <td>Username</td>
+          <td>Abdulrazaq Sodiq</td>
+      
 
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>08105082299</td>
 
-            </div>
-            <div>
-              <ul className='Account-detail-result'>
-                <li>Abdulrazaq Sodiq</li>
-                <li>08105082299</li>
-                <li>Abdulrazaqsodiq2015@gmail.com</li>
-                <li>Gtbank</li>
-                <li>0160157649</li>
-              </ul>
-            </div>
-          </div>
-		</Col>
-      </Row>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>Abdulrazaqsodiq2015@gmail.com</td>
+
+        </tr>
+        <tr>
+          <td>Bank Name</td>
+          <td>	Gtbank</td>
+        </tr>
+        <tr>
+          <td>Account Number</td>
+          <td>0160157649</td>
+        </tr>
+        
+      </tbody>
+    </Table>
+  
       </div>
+      
+      
     </Container>
     </div>
   );
