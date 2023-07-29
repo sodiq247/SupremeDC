@@ -1,18 +1,19 @@
-import React from 'react'
-import { BrowserRouter, Routes } from 'react-router-dom'
-import Routers from '../Routes/Routes'
+/** @format */
+
+import React from "react";
+import { BrowserRouter, Routes } from "react-router-dom";
+import Routers from "../Routes/Routes";
 // import Sidebar from './Sidebar'
 // import Header from './Header'
 
-
 const Layout = () => {
-    return (
-        <BrowserRouter>
-        {/* <Header />
+	return (
+		<BrowserRouter>
+			{/* <Header />
         <Sidebar /> */}
-        <Routers />
-        </BrowserRouter>
-    )
-}
+			<Routers />
+		</BrowserRouter>
+	);
+};
 
-export default Layout
+export default Layout;

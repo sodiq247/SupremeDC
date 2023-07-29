@@ -18,7 +18,6 @@ import {
 import { Link } from "react-router-dom";
 // import Button from "react-bootstrap/Button";
 
-
 const Sidebar = () => {
 	return (
 		<side className="sidebar web">
@@ -35,61 +34,61 @@ const Sidebar = () => {
 				</div>
 				<ul className="sidebar-list">
 					<li>
-						<Link to='/Dashboard'>
+						<Link to="/Dashboard">
 							<FontAwesomeIcon icon={faHouseChimney} className="icon" />
 							Dashboard
 						</Link>
 					</li>
 					<li>
-						<Link to='/BuyAirtime'>
+						<Link to="/BuyAirtime">
 							<FontAwesomeIcon icon={faPhoneVolume} className="icon" />
 							Buy Airtime
 						</Link>
 					</li>
 					<li>
-						<Link to='/BuyData'>
+						<Link to="/BuyData">
 							<FontAwesomeIcon icon={faSignal} className="icon" />
 							Buy Data
 						</Link>
 					</li>
 					<li>
-						<Link to='/Electricity'>
+						<Link to="/Electricity">
 							<FontAwesomeIcon icon={faLightbulb} className="icon" />
 							Electricity
 						</Link>
 					</li>
 					<li>
-						<Link to='/TVSubscription'>
+						<Link to="/TVSubscription">
 							<FontAwesomeIcon icon={faTv} className="icon" />
 							TV Subscription
 						</Link>
 					</li>
 					<li>
-						<Link to='/FundWallet'>
+						<Link to="/FundWallet">
 							<FontAwesomeIcon icon={faWallet} className="icon" />
 							Fund Wallet
 						</Link>
 					</li>
 					<li>
-						<Link to='/Prices'>
+						<Link to="/Prices">
 							<FontAwesomeIcon icon={faTag} className="icon" />
 							Prices
 						</Link>
 					</li>
 					<li>
-						<Link to='/Account'>
+						<Link to="/Account">
 							<FontAwesomeIcon icon={faUser} className="icon" />
 							Account
 						</Link>
 					</li>
 					<li>
-						<Link to='/Settings'>
+						<Link to="/Settings">
 							<FontAwesomeIcon icon={faGear} className="icon" />
 							Settings
 						</Link>
 					</li>
 					<li>
-						<Link to='/'>
+						<Link to="/">
 							<FontAwesomeIcon icon={faRightFromBracket} className="icon" />
 							Log Out
 						</Link>

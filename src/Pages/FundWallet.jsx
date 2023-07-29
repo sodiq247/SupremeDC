@@ -14,49 +14,46 @@ const FundWallet = () => {
 			<Header />
 			<Sidebar />
 			<div className="dashboard-main">
-			<div className="dashboar">
-				<Container className="dashboard-child">
-					
-				<Row className="bank-list fund-list">
-						<a href="/user/airtime" className="banks gtco-border">
-							<Col lg={3} xs={6} sm={4}></Col>
-							Gtbank
-						</a>
-						<a href="/user/airtime" className="banks">
-							<Col lg={3} xs={6} sm={4}></Col>
-							Other Bank
-						</a>
-						<a href="/user/airtime" className="banks">
-							<Col lg={3} xs={6} sm={4}></Col>
-							Other Bank
-						</a>
-						<a href="/user/airtime" className="banks">
-							<Col lg={3} xs={6} sm={4}></Col>
-							Other Bank
-						</a>
-					</Row>
-					<Row>
-						<Col lg={12} xs={12} sm={12}>
-							<div className="bank-acct fundwallet " id="gtbank">
-								<img src={gtco} alt="gtco logo" className="gtco-pic" />
-								<h3>
-									Account Number: 0807547109
-									<br />
-									Account Name: HUSMODATA - SupremeDC
-									<br />
-									Bank Name: GTBank
-									<br />
-									AUTOMATED BANK TRANSFER
-								</h3>
-								<p>Make transfer to this account to fund your wallet</p>
-							</div>
-						</Col>
-					</Row>
-					
-				</Container>
+				<div className="dashboar">
+					<Container className="dashboard-child">
+						<Row className="bank-list fund-list">
+							<a href="/user/airtime" className="banks gtco-border">
+								<Col lg={3} xs={6} sm={4}></Col>
+								Gtbank
+							</a>
+							<a href="/user/airtime" className="banks">
+								<Col lg={3} xs={6} sm={4}></Col>
+								Other Bank
+							</a>
+							<a href="/user/airtime" className="banks">
+								<Col lg={3} xs={6} sm={4}></Col>
+								Other Bank
+							</a>
+							<a href="/user/airtime" className="banks">
+								<Col lg={3} xs={6} sm={4}></Col>
+								Other Bank
+							</a>
+						</Row>
+						<Row>
+							<Col lg={12} xs={12} sm={12}>
+								<div className="bank-acct fundwallet " id="gtbank">
+									<img src={gtco} alt="gtco logo" className="gtco-pic" />
+									<h3>
+										Account Number: 0807547109
+										<br />
+										Account Name: HUSMODATA - SupremeDC
+										<br />
+										Bank Name: GTBank
+										<br />
+										AUTOMATED BANK TRANSFER
+									</h3>
+									<p>Make transfer to this account to fund your wallet</p>
+								</div>
+							</Col>
+						</Row>
+					</Container>
+				</div>
 			</div>
-			
-		</div>
 		</div>
 	);
 };
