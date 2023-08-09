@@ -18,7 +18,7 @@ function BuyData() {
 				<div className="BuyData-submain Form-submain">
 					<Row>
 						<Col sm={8} xs={{ order: "" }} className="BuyData-form BuyAirtime">
-							<Form>
+							<Form className="input-form">
 								<Form.Label className="label">Dico Name</Form.Label>
 								<Form.Select
 									aria-label="Default select example"

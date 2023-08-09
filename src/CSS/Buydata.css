@@ -142,6 +142,10 @@
     margin-top: 20%;
     
   }
+  .input-form {
+    width: 130%;
+    margin-left: -5%;
+  }
   /* Fundwallet mobile view */
   .fund-list {
     margin-top: 20%;
@@ -160,6 +164,9 @@
     padding-left: 5%;
     padding-top: 20%;
     text-align: left !important;
+}
+.logout-row {
+  padding: 25% 0%;
 }
   /* Logout mobile view end */
 
