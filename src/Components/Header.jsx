@@ -21,15 +21,16 @@ function Header() {
 	return (
 		<Navbar className="main ">
 			<Container>
-				<Button onClick={handleShow} className="mobile faBars-btn">
-					<FontAwesomeIcon icon={faBars} className="faBars" />
-				</Button>
+				
 				{/* <img src={Vector} alt=""  className='profile-pic web'/> */}
 				<Navbar.Brand href="" className="title">
 				<Link to="/Dashboard">
 					Supremedata
 					</Link>
 				</Navbar.Brand>
+				<Button onClick={handleShow} className="mobile faBars-btn">
+					<FontAwesomeIcon icon={faBars} className="faBars" />
+				</Button>
 				<Offcanvas show={show} onHide={handleClose}>
 					<Offcanvas.Header closeButton />
 					<Offcanvas.Body>
