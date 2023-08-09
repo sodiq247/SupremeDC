@@ -21,16 +21,8 @@ const MobileSidebar = () => {
 	return (
 		<side className="sidebar ">
 			<div className=" ">
-				<div className="profile">
-					{/* <div className="profile-pic">
-						<FontAwesomeIcon icon={faCircleUser} className="profile-icon" />
-					</div> */}
-					<div className="user-detail">
-						<div className="profile-name">Abdulrazaq Sodiq</div>
-						<div className="wallet-balance">Balance: ₦ 2,270.55</div>
-					</div>
+				<div className="wallet-balance">Wallet Balance: <br /> ₦ 2,270.55</div>
 					<hr />
-				</div>
 				<ul className="sidebar-list mobile-list">
 					<li>
 						<Link to="/Dashboard">
@@ -56,8 +48,8 @@ const MobileSidebar = () => {
 							Electricity
 						</Link>
 					</li>
-					<li>
-						<Link to="/TvSubscription">
+					<li className="tv-sub">
+						<Link to="/TvSubscription" >
 							<FontAwesomeIcon icon={faTv} className="icon" />
 							TV Subscription
 						</Link>

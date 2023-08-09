@@ -9,27 +9,10 @@ gap: 100px;
 flex-shrink: 0;
 background: #4FB3BF;
 }
-.profile {
-    display: flex;
-    flex-direction: row;
-    gap: 10%;
-    padding-left: 5%;
-    padding-top: 2%;
-}
-.user-detail {
-    color:  #005662;
-    font-family: Fira Sans;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 4%;
-}
-.profile-name{
-    margin-left: -23%;
-}
+
 .wallet-balance {
-    margin-left: -12%;
+    /* margin-left: 5%; */
+    margin-top: 3%;
 }
 .sidebar-sticky {
     width: 100%;
@@ -61,22 +44,24 @@ li a {
     font-size: 20px;
     padding-right: 5%;
   }
-  .profile-icon {
-    color: #005662;
-    font-size: 45px ; 
-    padding-top: 8px;
-    margin-left: -10%;
-  }
+  
   
   /* Mobile View */
   @media screen and (max-width: 768px) {
     .web {
         display: none;
     }
+    .wallet-balance {
+        margin-left: 25%;
+        margin-top: 0%;
+    }
     .mobile-list {
         padding-top: 15% !important;
     }
     .profile {
         margin-left: 22%;
+    }
+    .tv-sub {
+        width: 106% !important;
     }
   }

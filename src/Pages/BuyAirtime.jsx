@@ -17,7 +17,7 @@ function BuyData() {
 			<Container className="BuyData-main">
 				<div className="BuyData-submain Form-submain">
 					<Row>
-						<Col sm={8} xs={{ order: "" }} className="BuyData-form BuyAirtime">
+						<Col sm={10} xs={{ order: "" }} className="BuyData-form BuyAirtime">
 							<Form>
 								<Form.Label className="label">Network</Form.Label>
 								<Form.Select

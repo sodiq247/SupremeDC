@@ -6,13 +6,16 @@
   width: 80%;
   margin-left: 19%;
   border-radius: 5px;
-background: #FFF;
+/* background: #FFF; */
 /* btn */
-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+/* box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25); */
 }
 .dashboard-child {
-  padding: 5% 3%;
+  /* padding: 5% 3%; */
   color: #005662;
+}
+.notification-div {
+  margin-top: 0% !important;
 }
 .status {
   margin-bottom: 5% !important;
@@ -150,7 +153,32 @@ box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     width: 100%;
     margin-left: 0 !important;
   }
-  
+  .welcome {
+    margin-top: 12%;
+  }
+  .col-6 {
+    flex: 0 0 auto;
+    width: 27%;
+}
+  .notification-items {
+    width: 95%;
+  }
+  .banks {
+    width: 48%;
+  }
+  .transaction {
+    margin: 1% -2%;
+  }
+  .transaction-items {
+    width: 48%;
+  }
+  .wallet-items {
+    width: 96%;
+  }
+  .service {
+    width: 47%;
+  }
+
 }
 /* Mobile View End */
 /* FundWallet Page Start */
