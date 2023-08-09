@@ -21,6 +21,8 @@ const MobileSidebar = () => {
 	return (
 		<side className="sidebar ">
 			<div className=" ">
+				<div className="profile"><FontAwesomeIcon icon={faCircleUser} className="profile-icon" />
+				<p className="profile-name">Abdulrazaq sodiq</p></div>
 				<div className="wallet-balance">Wallet Balance: <br /> ₦ 2,270.55</div>
 					<hr />
 				<ul className="sidebar-list mobile-list">

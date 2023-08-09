@@ -22,6 +22,8 @@ const Sidebar = () => {
 	return (
 		<side className="sidebar web">
 			<div className="sidebar-sticky ">
+			<div className="profile"><FontAwesomeIcon icon={faCircleUser} className="profile-icon" />
+				<p className="profile-name">Abdulrazaq sodiq</p></div>
 				<div className="wallet-balance">Wallet Balance: <br /> ₦ 2,270.55</div>
 					<hr />
 				<ul className="sidebar-list">

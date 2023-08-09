@@ -8,6 +8,7 @@ import MobileSidebar from "./MoblieSidebar";
 //import Vector from '../Assets/images/Vector.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import "../CSS/Header.css";
 
@@ -24,8 +25,10 @@ function Header() {
 					<FontAwesomeIcon icon={faBars} className="faBars" />
 				</Button>
 				{/* <img src={Vector} alt=""  className='profile-pic web'/> */}
-				<Navbar.Brand href="#home" className="title">
-					Dashboard
+				<Navbar.Brand href="" className="title">
+				<Link to="/Dashboard">
+					Supremedata
+					</Link>
 				</Navbar.Brand>
 				<Offcanvas show={show} onHide={handleClose}>
 					<Offcanvas.Header closeButton />

@@ -44,22 +44,58 @@ li a {
     font-size: 20px;
     padding-right: 5%;
   }
-  
+  .wallet-balance {
+    margin-left: 11%;
+    margin-top: -13%;
+    margin-bottom: -4%;
+}
+.mobile-list {
+    padding-top: 10% !important;
+}
+.profile {
+    margin-left: 8.5%;
+    font-size: 18px;
+    margin-top: 3%;
+    display: flex;
+}
+.profile-icon {
+    color: #005662; 
+    font-size: 50px;
+    padding-right: 3%;
+  }
+  .profile-name {
+    font-size: 17px;
+}
   
   /* Mobile View */
   @media screen and (max-width: 768px) {
     .web {
         display: none;
     }
+
+    .title {
+        margin-right: 15%;
+    }
     .wallet-balance {
-        margin-left: 25%;
-        margin-top: 0%;
+        margin-left: 27%;
+        margin-top: -15%;
     }
     .mobile-list {
-        padding-top: 15% !important;
+        padding-top: 10% !important;
     }
     .profile {
-        margin-left: 22%;
+        margin-left: -3.5%;
+        font-size: 18px;
+        margin-top: -32%;
+        display: flex;
+    }
+    .profile-icon {
+        color: #005662; 
+        font-size: 50px;
+        padding-right: 3%;
+      }
+      .profile-name {
+        font-size: 17px;
     }
     .tv-sub {
         width: 106% !important;

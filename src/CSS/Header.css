@@ -9,10 +9,10 @@
     position: fixed;
     padding-bottom: 2%;
 }
-.title {
+.title a {
   width: 101px;
     height: 38px;
-    margin-left: 0px;
+    margin-left: 510%;
     padding-bottom: 3%;
     font-family: 'Fira Sans';
     font-style: normal;
@@ -21,6 +21,7 @@
     line-height: 38px;
     /* color: #264966; */
     color: #4FB3BF;
+    text-decoration: none;
 }
 .profile-pic {
   width: 40px;
@@ -53,6 +54,9 @@
   .title {
     width: 120px;
   }
+  .title a {
+    margin-left: 0%;
+  }
   .web {
     display: none;
   }
@@ -61,7 +65,7 @@
     left: 0%;
   }
   .offcanvas-header .btn-close {
-    margin-left: 80%;
+    margin-left: 88%;
     padding-top: 10%;
   }
   .offcanvas {
