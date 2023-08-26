@@ -3,12 +3,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Layout from "./Components/Layout";
+import Root from "./Routes/Root";
 
 function App() {
 	return (
 		<div className="App">
-			<Layout />
+			<Root />
 		</div>
 	);
 }

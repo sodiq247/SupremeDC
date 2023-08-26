@@ -12,7 +12,7 @@ import Account from "../Pages/Account";
 import Prices from "../Pages/Prices";
 import FundWallet from "../Pages/FundWallet";
 import Logout from "../Pages/Logout";
-const Routers = () => {
+const Root = () => {
 	return (
 		<Routes>
 			<Route path="/" exact Component={Logout} />
@@ -29,4 +29,4 @@ const Routers = () => {
 	);
 };
 
-export default Routers;
+export default Root;
