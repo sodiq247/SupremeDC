@@ -4,12 +4,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import "../CSS/Buydata.css";
 import Button from "react-bootstrap/Button";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
 
-function BuyData() {
+function TvSubscription() {
 	return (
 		<div>
 			<Header />
@@ -69,4 +68,4 @@ function BuyData() {
 	);
 }
 
-export default BuyData;
+export default TvSubscription;

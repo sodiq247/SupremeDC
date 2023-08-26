@@ -1,6 +1,5 @@
 /** @format */
 import React from "react";
-import "../CSS/Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faHouseChimney,

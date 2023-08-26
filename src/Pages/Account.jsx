@@ -1,7 +1,6 @@
 /** @format */
 
 import Container from "react-bootstrap/Container";
-import "../CSS/Buydata.css";
 import Table from "react-bootstrap/Table";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";

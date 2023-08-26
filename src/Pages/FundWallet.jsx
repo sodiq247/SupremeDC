@@ -3,7 +3,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../CSS/Dashboard.css";
 import gtco from "../Assets/images/gtco";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
