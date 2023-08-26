@@ -9,24 +9,18 @@ import MobileSidebar from "./MoblieSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
 import "../CSS/Header.css";
 
 function Header() {
 	const [show, setShow] = useState(false);
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
 	return (
 		<Navbar className="main ">
 			<Container>
-				
-				{/* <img src={Vector} alt=""  className='profile-pic web'/> */}
 				<Navbar.Brand href="" className="title">
-				<Link to="/Dashboard">
-					Supremedata
-					</Link>
+					<Link to="/Dashboard">Supremedata</Link>
 				</Navbar.Brand>
 				<Button onClick={handleShow} className="mobile faBars-btn">
 					<FontAwesomeIcon icon={faBars} className="faBars" />

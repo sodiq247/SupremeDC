@@ -16,9 +16,7 @@ function Logout() {
 						<Col sm={8} xs={{ order: "" }} className="BuyData-form BuyAirtime">
 							<Form className="input-form">
 								<div>
-									<h1 className="">
-										Supremedata
-									</h1>
+									<h1 className="">Supremedata</h1>
 								</div>
 								<Form.Group>
 									<Form.Label className="label phone-label">
