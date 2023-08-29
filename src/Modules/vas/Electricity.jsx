@@ -5,8 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Header from "../Components/Header";
-import Sidebar from "../Components/Sidebar";
+import Header from "../../Components/Header";
+import Sidebar from "../../Components/Sidebar";
 
 function BuyData() {
 	return (

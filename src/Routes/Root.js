@@ -3,19 +3,23 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Pages/Dashboard";
-import BuyData from "../Pages/BuyData";
-import BuyAirtime from "../Pages/BuyAirtime";
-import Electricity from "../Pages/Electricity";
-import TvSubscription from "../Pages/TvSubscription";
+import BuyData from "../Modules/vas/BuyData";
+import BuyAirtime from "../Modules/vas/BuyAirtime";
+import Electricity from "../Modules/vas/Electricity";
+import TvSubscription from "../Modules/vas/TvSubscription";
 import Settings from "../Pages/Settings";
 import Account from "../Pages/Account";
 import Prices from "../Pages/Prices";
 import FundWallet from "../Pages/FundWallet";
 import Logout from "../Pages/Logout";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
 const Root = () => {
 	return (
 		<Routes>
-			<Route path="/" exact Component={Logout} />
+			<Route path="/" exact Component={Login} />
+			<Route path="/Signup" Component={Signup} />
+			<Route path="/Logout" Component={Logout} />
 			<Route path="/Dashboard" Component={Dashboard} />
 			<Route path="/BuyData" Component={BuyData} />
 			<Route path="/BuyAirtime" Component={BuyAirtime} />
