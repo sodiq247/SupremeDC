@@ -13,24 +13,17 @@ import accountService from "../Services/authServices"
 const Signup = (props) => {
 	const { handleSubmit, register } = useForm();
   const [message, setMessage] = useState(null);
-//   let src = "assets/img/loading-transparent.gif";
-//   let src = "https://pin.it/2FabqcZ";
-  let src = "";
-  if (props.company) {
-    if (props.company.data) {
-      src =
-	//   "https://safe.wbalite.com/" +
-	  "" +
-        props.company.data.logo.replace("public", "storage");
-    }
-  }
+
+ 
   const createAccount = async (data) => {
-    data.company = props.company ? props.company.data.company_reference : "";
+	
     let response = await accountService.signup(data);
-    if (response.statusCode === 200) {
+	console.log(response)
+	return
+    if (response.status === 200) {
       setMessage("Registration was successful");
     } else {
-      setMessage(response.message);
+      setMessage(response.data.message);
     }
   };
 	return (
@@ -137,9 +130,9 @@ const Signup = (props) => {
 									<p>Enter same password as before</p>
 								</Form.Group>
 								{/* <Checkbox></Checkbox> */}
-								<Link to="/">
+							
 									<Button type="submit" value="Register" className="Buy-now-btn">Sign Up</Button>{" "}
-								</Link>
+								
                     			{/* <Input type="submit" class="btnRegister" value="Register" /> */}
 								<div>Already a member? <Link to='/'>Sign In</Link></div>
 							</Form>

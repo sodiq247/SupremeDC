@@ -1,5 +1,5 @@
 import axios from "axios";
-let baseUrl = "";
+let baseUrl = "http://localhost:5030/api/v1/";
 
 const vasServices = {
     airTime: async (data) => {

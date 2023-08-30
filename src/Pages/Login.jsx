@@ -59,7 +59,7 @@ const Login = (props) => {
 										placeholder="Enter Password"
 										{...register("password")}
 									/>
-								</Form.Group>
+								     </Form.Group>
 								{/* <link to='/Logout'>Forgot Password ?</link> */}
 								<Link to="">
 									<Button type="submit" className="Buy-now-btn">Login</Button>{" "}

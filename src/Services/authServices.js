@@ -1,12 +1,13 @@
 import axios from "axios";
-let baseUrl = "";
+let baseUrl = "http://localhost:5030/api/v1/account/";
 const accountServices = {
   login: async function (data) {
-    let response = await axios.post(`${baseUrl}login`, data);
+    let response = await axios.post(`${baseUrl}token`, data);
     return response;
   },
   signup: async function (data) {
-    let response = await axios.post(`${baseUrl}register`, data);
+    let response = await axios.post(`${baseUrl}`, data);
+    
     return response;
   },
   resetPassword: async function (data) {
