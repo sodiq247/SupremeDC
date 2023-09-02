@@ -7,7 +7,6 @@ const accountServices = {
   },
   signup: async function (data) {
     let response = await axios.post(`${baseUrl}`, data);
-    
     return response;
   },
   resetPassword: async function (data) {
@@ -17,7 +16,7 @@ const accountServices = {
   updateProfile: async function (data) {
     let response = await axios.put(`${baseUrl}update-profile`, data);
     return response;
-  }
+  },
 
   // validateOTP: async function (otp, user_reference) {
   //   let response = await axios.post(`${baseUrl}verify-otp`, {
