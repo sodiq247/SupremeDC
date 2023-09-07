@@ -17,7 +17,15 @@ const vasServices = {
       },
       electric: async (data) => {
         let response = await axios
-          .post(`${baseUrl}data`, data)
+          .post(`${baseUrl}electric`, data)
+          .catch((err) => {
+            console.log(err);
+          });
+        return response;
+      },
+      cabletv: async (data) => {
+        let response = await axios
+          .post(`${baseUrl}cabletv`, data)
           .catch((err) => {
             console.log(err);
           });
