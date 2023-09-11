@@ -11,9 +11,21 @@ import Sidebar from "../../Components/Sidebar";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
+import { Option1Input, Option2Input, Option3Input, Option4Input } from "../Plans/DataPlan"
 
 const  BuyData = (props) => {
   let [message, setMessage] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  // Create a mapping of option values to component functions
+  const OptionComponents = {
+    1: <Option1Input />,
+    2: <Option2Input />,
+    3: <Option3Input />,
+    4: <Option4Input />
+  };
   const { handleSubmit, register } = useForm();
   const dataBundle = async (data) => {
     let response = await vasServices.dataBundle(data);
@@ -47,19 +59,22 @@ const  BuyData = (props) => {
 									<option value="3">Airtel</option>
 									<option value="4">9mobile</option>
 								</Form.Select>
-								{/* <Form.Label className="label">Data type</Form.Label>
+								<Form.Label className="label">Data type</Form.Label>
 								<Form.Select
 									aria-label="Default select example"
-									className="mb-3">
+									className="mb-3"
+									onChange={handleSelectChange}
+									>
 									<option></option>
-									<option value="1">SME</option>
-									<option value="2">GIFTING</option>
-									<option value="3">CORPORATE GIFTING</option>
-									<option value="3">DIRECT</option>
+									<option value="1" id="1">SME</option>
+									<option value="2" id="2">GIFTING</option>
+									<option value="3" id="3">CORPORATE GIFTING</option>
+									<option value="3" id="4">DIRECT</option>
 								</Form.Select>
 								<p className="mb-3 plan-note">
 									Select Plan Type SME or GIFTING or CORPORATE GIFTING
-								</p> */}
+								
+								</p>
 								<Form.Group>
 									<Form.Label className="label phone-label">
 										Phone Number
@@ -72,14 +87,15 @@ const  BuyData = (props) => {
 										{...register("mobile_number")}
 									/>
 								</Form.Group>
-								{/* <Form.Group>
+								{OptionComponents[selectedOption] || null}
+								<Form.Group>
 									<Form.Label className="label">Amount</Form.Label>
 									<Form.Control
 										type="phone-number"
 										placeholder="200"
 										className="mb-3"
 									/>
-								</Form.Group> */}
+								</Form.Group>
 								<Button className="Buy-now-btn"  type="submit" value="">Buy Now</Button>{" "}
 							</Form>
 						</Col>
