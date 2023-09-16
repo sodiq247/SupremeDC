@@ -7,14 +7,29 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Header from "../../Components/Header";
 import Sidebar from "../../Components/Sidebar";
-// import dataType from "./dataType";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
-import dataTypes from "./dataTypes.json"
+import { Option1Input, Option2Input, Option3Input, Option4Input } from "../Plans/DataPlan"
+
 const  BuyData = (props) => {
   let [message, setMessage] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+  const [plan, setplan] = useState("");
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  const handleDataPlan = (optionValue) => {
+    setplan(optionValue);
+  };
+  // Create a mapping of option values to component functions
+  const OptionComponents = {
+    1: <Option1Input onSelectOption={handleDataPlan}/>,
+    2: <Option2Input onSelectOption={handleDataPlan}/>,
+    3: <Option3Input onSelectOption={handleDataPlan}/>,
+    4: <Option4Input onSelectOption={handleDataPlan}/>,
+  };
   const { handleSubmit, register } = useForm();
   const dataBundle = async (data) => {
     let response = await vasServices.dataBundle(data);
@@ -49,18 +64,17 @@ const  BuyData = (props) => {
 									<option value="4">9mobile</option>
 								</Form.Select>
 								<Form.Label className="label">Data type</Form.Label>
-									<Form.Select
+								<Form.Select
 									aria-label="Default select example"
 									className="mb-3"
-									{...register("plan")}
+									onChange={handleSelectChange}
 									>
 									<option></option>
-									{
-									dataTypes.map((dataTypes, index) => (
-										<option key={index}>{dataTypes}</option>
-									))}
-									</Form.Select>
-
+									<option value="1" id="1">SME</option>
+									<option value="2" id="2">GIFTING</option>
+									<option value="3" id="3">CORPORATE GIFTING</option>
+									<option value="3" id="4">DIRECT</option>
+								</Form.Select>
 								<p className="mb-3 plan-note">
 									Select Plan Type SME or GIFTING or CORPORATE GIFTING
 								
@@ -77,6 +91,9 @@ const  BuyData = (props) => {
 										{...register("mobile_number")}
 									/>
 								</Form.Group>
+								{OptionComponents[selectedOption] || null}
+								console.log(plan,'pwoqq')
+								{/* {...register("plan")} */}
 								<Form.Group>
 									<Form.Label className="label">Amount</Form.Label>
 									<Form.Control
