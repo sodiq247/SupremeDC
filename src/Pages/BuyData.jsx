@@ -8,22 +8,31 @@ import Button from "react-bootstrap/Button";
 import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
 import { useState } from "react";
-import { Option1Input, Option2Input, Option3Input, Option4Input } from '../Data Plan/DataPlanOption';
+import {
+  Option1Input,
+  Option2Input,
+  Option3Input,
+  Option4Input,
+} from "../Data Plan/DataPlanOption";
 
 function BuyData() {
-
   const [selectedOption, setSelectedOption] = useState("");
-  
+  const [selectedData, setSelectedData] = useState("");
+
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const handleDataPlan = (optionValue) => {
+    setSelectedData(optionValue);
+  };
 
+  console.log(selectedData,'pwoqq')
   // Create a mapping of option values to component functions
   const OptionComponents = {
-    1: <Option1Input />,
-    2: <Option2Input />,
-    3: <Option3Input />,
-    4: <Option4Input />
+    1: <Option1Input onSelectOption={handleDataPlan}/>,
+    2: <Option2Input onSelectOption={handleDataPlan}/>,
+    3: <Option3Input onSelectOption={handleDataPlan}/>,
+    4: <Option4Input onSelectOption={handleDataPlan}/>,
   };
 
   return (
@@ -61,9 +70,7 @@ function BuyData() {
                 <p className="mb-3 plan-note">
                   Select Plan Type SME or GIFTING or CORPORATE GIFTING
                 </p>
-                
                 {OptionComponents[selectedOption] || null}
-                <p>What Plan</p>
                 <Form.Group>
                   <Form.Label className="label phone-label">
                     Phone Number
@@ -82,7 +89,9 @@ function BuyData() {
                     className="mb-3"
                   />
                 </Form.Group>
-                <Button className="Buy-now-btn">Buy Now</Button>{" "}
+                <Button
+                 
+                className="Buy-now-btn">Buy Now</Button>{" "}
               </Form>
             </Col>
             <Col sm={4} xs={{ order: "" }}>
