@@ -26,6 +26,10 @@ const vasServices = {
 		});
 		return response;
 	},
+	validateMeter: async (data) => {
+		let response = await axios.post(`${baseUrl}validateMeter`, data);
+		return response;
+	}
 };
 
 export default vasServices;

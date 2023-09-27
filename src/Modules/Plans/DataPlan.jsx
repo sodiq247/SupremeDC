@@ -22,9 +22,13 @@ function Option1Input({ onSelectOption }) {
         // {...register("plan")}
       >
         <option></option>
-        <option value="13">Option 1.1</option>
-        <option value="255">Option 1.2 </option>
-        <option value="51">Option 1.3 </option>
+        <option value="13"> 500.0MB SME ₦125.0 30 days </option>
+        <option value="13"> 1.0GB SME ₦250.0 30 days </option>
+        <option value="13"> 2.0GB SME ₦500.0 30 days </option>
+        <option value="13"> 3.0GB SME ₦750.0 30 days </option>
+        <option value="13"> 5.0GB SME ₦1250.0 30 days </option>
+        <option value="13"> 10.0GB SME ₦2500.0 30 days </option>
+        <option value="13"> 20.0GB SME ₦5000.0 30 days </option>
       </Form.Select>
     </div>
   );
@@ -49,10 +53,14 @@ function Option2Input({ onSelectOption }) {
         value={selectedValue}
       >
         <option></option>
-        <option value="option2.0">Option 1 </option>
-        <option value="option2.1">Option 2 </option>
-        <option value="option2.2">Option 3 </option>
-      </Form.Select>
+        <option value="1"> 500.0MB CORPORATE GIFTING ₦125.0 30 days </option>
+        <option value="3"> 1.0GB CORPORATE GIFTING ₦250.0 30 days </option>
+        <option value="113"> 2.0GB CORPORATE GIFTING ₦500.0 30 days </option>
+        <option value="13"> 3.0GB CORPORATE GIFTING ₦750.0 30 days </option>
+        <option value="13"> 5.0GB CORPORATE GIFTING ₦1250.0 30 days </option>
+        <option value="13"> 10.0GB CORPORATE GIFTING ₦2500.0 30 days </option>
+        <option value="13"> 20.0GB CORPORATE GIFTING ₦5000.0 30 days </option>
+       </Form.Select>
     </div>
   );
 }

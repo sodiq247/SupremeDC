@@ -31,6 +31,7 @@ const  BuyData = (props) => {
     4: <Option4Input onSelectOption={handleDataPlan}/>,
   };
   const { handleSubmit, register } = useForm();
+
   const dataBundle = async (data) => {
     let response = await vasServices.dataBundle(data);
     console.log(response);
@@ -91,8 +92,18 @@ const  BuyData = (props) => {
 										{...register("mobile_number")}
 									/>
 								</Form.Group>
-								{OptionComponents[selectedOption] || null}
-								console.log(plan,'pwoqq')
+								<Form.Select
+									aria-label="Default select example"
+									className="mb-3" {...register("plan")}>
+									<option></option>
+									<option value="1">MTN</option>
+									<option value="2">GLO</option>
+									<option value="3">Airtel</option>
+									{OptionComponents[selectedOption] || null }
+
+								</Form.Select>
+								{OptionComponents[selectedOption] || null }
+								{/* console.log("value") */}
 								{/* {...register("plan")} */}
 								<Form.Group>
 									<Form.Label className="label">Amount</Form.Label>

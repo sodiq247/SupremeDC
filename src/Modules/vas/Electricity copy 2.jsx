@@ -8,27 +8,26 @@ import Button from "react-bootstrap/Button";
 import Header from "../../Components/Header";
 import Sidebar from "../../Components/Sidebar";
 
-import Modal from 'react-bootstrap/Modal';
+import Modal from 'react-bootstrap-modal';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
 // import { Alert } from "react-bootstrap";
 
 const Electricity = (props) => {
-	const [message, setMessage] = useState("");
+	// const [message, setMessage] = useState("");
 	const { handleSubmit, register } = useForm();
-	
-	const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [modalMessage, setModalMessage] = useState("");
+	const closeModal = () => {
+		setIsModalOpen(false);
+	  };
 	 const validateMeter = async (data) => {
     try {
       const response = await vasServices.validateMeter(data);
       console.log(response);
-	  setMessage(response.name);
+	  setModalMessage(response.name);
+	  setIsModalOpen(true);
 	//   console.log(ModalMessage)
     //   if (response.status === "successful") {
     //     setModalMessage(response.name);
@@ -39,7 +38,8 @@ const Electricity = (props) => {
     //   }
     } catch (error) {
       console.error(error);
-      setMessage("An error occurred while validating the meter.");
+      setModalMessage("An error occurred while validating the meter.");
+      setIsModalOpen(true); // Open the modal
     }
   };
  
@@ -54,6 +54,7 @@ const Electricity = (props) => {
 
 
 						<Form className="input-form" onSubmit={handleSubmit(validateMeter)}>
+						{/* {message && <div className="alert alert-info">{message}</div>}		 */}
 								<Form.Label className="label">Dico Name
 								
 						<Form.Select
@@ -95,7 +96,7 @@ const Electricity = (props) => {
 								<option value="Prepaid">Prepaid</option>
 								<option value="Postpaid">Postpaid</option>
 								</Form.Select>
-								<Button className="Buy-now-btn" onClick={handleShow} type="submit">Validate</Button>{" "}
+								<Button className="Buy-now-btn" type="submit">Validate</Button>{" "}
 								</Form.Label>
 						</Form>
 						
@@ -103,28 +104,20 @@ const Electricity = (props) => {
 						{/* <Col sm={4} xs={{ order: '' }}>sm=4</Col> */}
 					</Row>
 				</div>
-				<div>
-				
-				<Modal show={show} onHide={handleClose} size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+			</Container>
+			{/* Modal */}
+			<Modal show={isModalOpen} onHide={closeModal}>
+       
+	    <Modal.Header closeButton>
+          <Modal.Title>Validation Result</Modal.Title>
         </Modal.Header>
-        <Modal.Body>						{message && <div className="alert alert-info">{message}</div>}		
-</Modal.Body>
+        <Modal.Body>
+          <div className="alert alert-info">{modalMessage}</div>
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Proceed
-          </Button>
+          <Button onClick={closeModal}>Close</Button>
         </Modal.Footer>
       </Modal>
-				</div>
-			</Container>
-			
 		</div>
 	);
 }
