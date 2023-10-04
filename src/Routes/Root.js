@@ -2,10 +2,10 @@
 
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "../Pages/Dashboard";
+import Dashboard from "../Pages/user/Dashboard";
 import BuyData from "../Modules/vas/BuyData";
 import BuyAirtime from "../Modules/vas/BuyAirtime";
-import Electricity from "../Modules/vas/Electricity";
+import Electricity from "../Modules/vas/Electricit";
 import TvSubscription from "../Modules/vas/TvSubscription";
 import Settings from "../Pages/Settings";
 import Account from "../Pages/Account";

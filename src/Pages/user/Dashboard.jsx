@@ -16,10 +16,10 @@ import {
 	faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
-import gtco from "../Assets/images/gtco";
+import gtco from "../../Assets/images/Vector.svg";
 import { Link } from "react-router-dom";
-import Sidebar from "../Components/Sidebar";
-import Header from "../Components/Header";
+import Sidebar from "../../Components/Sidebar";
+import Header from "../../Components/Header";
 // import BuyData from "./BuyData";
 
 const Dashboard = () => {
