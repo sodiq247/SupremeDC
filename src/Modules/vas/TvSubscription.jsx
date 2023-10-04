@@ -11,9 +11,11 @@ import Sidebar from "../../Components/Sidebar";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
+// import tvPlans from "../Plans/tvPlans.json"
+
 
 const  TvSubscription = (props) => {
-  let [message, setMessage] = useState("");
+//   let [message, setMessage] = useState("");
   const { handleSubmit, register } = useForm();
   const cabletv = async (data) => {
     let response = await vasServices.cabletv(data);
@@ -26,6 +28,11 @@ const  TvSubscription = (props) => {
 	// 	  }
     };
 
+	// const [selectedTvPlan, setSelectedTvPlan] = useState(""); // State to track selected TvPlan
+	//   const handleTvPlanChange = (event) => {
+	// 	setSelectedTvPlan(event.target.value);
+	//   };
+
 	return (
 		<div>
 			<Header />
@@ -34,15 +41,31 @@ const  TvSubscription = (props) => {
 				<div className="BuyData-submain Form-submain">
 					<Row>
 						<Col sm={8} xs={{ order: "" }} className="BuyData-form">
-						{message && <div className="alert alert-info">{message}</div>}
+						{/* {message && <div className="alert alert-info">{message}</div>} */}
 
 								<Form onSubmit={handleSubmit(cabletv)}>
 
 								<Form.Label className="label">Cable-TV Name</Form.Label>
+								{/* <Form.Select
+									aria-label="Default select example"
+									className="mb-3"
+									// value={selectedTvPlan}
+									{...register("cablename")}
+									onChange={handleTvPlanChange}
+									
+									>
+									<option></option>
+									<option value="1">GOTV</option>
+									<option value="2">DSTV</option>
+									<option value="3">STARTIME</option>
+								</Form.Select> */}
 								<Form.Select
 									aria-label="Default select example"
 									className="mb-3"
+									// value={selectedTvPlan}
 									{...register("cablename")}
+									// onChange={handleTvPlanChange}
+									
 									>
 									<option></option>
 									<option value="1">GOTV</option>
@@ -62,14 +85,30 @@ const  TvSubscription = (props) => {
 									/>
 								</Form.Group>
 								<Form.Label className="label">Cable-Tv Plan</Form.Label>
-								<Form.Select
+								{/* <Form.Select
 									aria-label="Default select example"
 									className="mb-3"
 									{...register("cableplan")}
 									>
+									<option value="">Select a plan</option>
+									{selectedTvPlan &&
+											tvPlans[selectedTvPlan].map((data, index) => (
+												<option key={index} value={data.id}>
+												{data.title}
+												</option>
+									))}
+								</Form.Select> */}
+								<Form.Select
+									aria-label="Default select example"
+									className="mb-3"
+									// value={selectedTvPlan}
+									{...register("cableplan")}
+									// onChange={handleTvPlanChange}
+									
+									>
 									<option></option>
 									<option value="1">GOTV</option>
-									<option value="2">planTV</option>
+									<option value="2">DSTV</option>
 									<option value="3">STARTIME</option>
 								</Form.Select>
 								{/* <p className='mb-3 plan-note'>Select Plan Type SME or GIFTING or CORPORATE GIFTING</p> */}

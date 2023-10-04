@@ -10,9 +10,9 @@ import Sidebar from "../../Components/Sidebar";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
-import dataTypes from "./dataTypes.json"
+import dataTypes from "../Plans/dataTypes.json"
 const  BuyData = (props) => {
-  let [message, setMessage] = useState("");
+//   let [message, setMessage] = useState("");
   const { handleSubmit, register } = useForm();
   const dataBundle = async (data) => {
     let response = await vasServices.dataBundle(data);
@@ -36,7 +36,7 @@ const  BuyData = (props) => {
 				<div className="BuyData-submain Form-submain">
 					<Row>
 						<Col sm={8} xs={{ order: "" }} className="BuyData-form">
-						{message && <div className="alert alert-info">{message}</div>}
+						{/* {message && <div className="alert alert-info">{message}</div>} */}
 
 							<Form onSubmit={handleSubmit(dataBundle)}>
 								<Form.Label className="label">Network</Form.Label>
