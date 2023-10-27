@@ -11,18 +11,22 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
 import dataTypes from "../Plans/dataTypes.json"
+import { propTypes } from "react-bootstrap/esm/Image";
 const  BuyData = (props) => {
-//   let [message, setMessage] = useState("");
+	console.log(props)
+  let [message, setMessage] = useState("");
   const { handleSubmit, register } = useForm();
-  const dataBundle = async (data) => {
+  const dataBundle = async (data, event) => {
+	event.preventDefault();
+	alert(data)
     let response = await vasServices.dataBundle(data);
     console.log(response);
-    //  if (response.status === successful) {
-	// 		setMessage("Successful");
-	// 		// navigate("/");
-	// 	  } else {
-	// 		setMessage(response.message);
-	// 	  }
+     if (response.status === 'successful') {
+			setMessage("Successful");
+			// navigate("/");
+		  } else {
+			setMessage(response.message);
+		  }
     };
 	const [selectedNetwork, setSelectedNetwork] = useState(""); // State to track selected network
 	  const handleNetworkChange = (event) => {
@@ -37,12 +41,13 @@ const  BuyData = (props) => {
 					<Row>
 						<Col sm={8} xs={{ order: "" }} className="BuyData-form">
 						{/* {message && <div className="alert alert-info">{message}</div>} */}
-
-							<Form onSubmit={handleSubmit(dataBundle)}>
+							{/* <Form onSubmit={(e) => handleSubmit((data) => dataBundle(data, e))}> */}
+							<Form onSubmit={(e) => handleSubmit((data) => dataBundle(data, e))}>
 								<Form.Label className="label">Network</Form.Label>
 								<Form.Select
 									aria-label="Default select example"
-									className="mb-3" {...register("network")}>
+									className="mb-3" {...register("network")}
+								>
 									<option value="">Select a network</option>
 									<option value="1">MTN</option>
 									<option value="2">GLO</option>

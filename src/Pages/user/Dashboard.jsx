@@ -16,7 +16,7 @@ import {
 	faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
-import gtco from "../../Assets/images/Vector.svg";
+// import gtco from "../../Assets/images/gtbank.jpeg";
 import { Link } from "react-router-dom";
 import Sidebar from "../../Components/Sidebar";
 import Header from "../../Components/Header";
@@ -61,7 +61,7 @@ const Dashboard = () => {
 						<Row>
 							<Col lg={12} xs={12} sm={12}>
 								<div className="bank-acct" id="gtbank">
-									<img src={gtco} alt="gtco logo" className="gtco-pic" />
+									{/* <img src={gtco} alt="gtco logo" className="gtco-pic" /> */}
 									<h3>
 										Account Number: 0807547109
 										<br />

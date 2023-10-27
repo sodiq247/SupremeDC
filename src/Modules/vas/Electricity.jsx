@@ -12,7 +12,9 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
+
 // import { Alert } from "react-bootstrap";
+
 
 const Electricity = (props) => {
 	const [message, setMessage] = useState("");
@@ -21,8 +23,7 @@ const Electricity = (props) => {
 	const [show, setShow] = useState(false);
   	const handleClose = () => setShow(false);
   	const handleShow = () => setShow(true);
-	// const handleShowElectric = () => setShow(true);
-
+	
 	 const validateMeter = async (data) => {
     try {
       const response = await vasServices.validateMeter(data);
