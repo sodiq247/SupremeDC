@@ -12,19 +12,18 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
-
+import { useWallet } from "../../Components/Wallet";
 // import { Alert } from "react-bootstrap";
-
 
 const Electricity = (props) => {
 	const [message, setMessage] = useState("");
 	const { handleSubmit, register } = useForm();
-	
 	const [show, setShow] = useState(false);
   	const handleClose = () => setShow(false);
   	const handleShow = () => setShow(true);
-	
-	 const validateMeter = async (data) => {
+	const { state, reduceWallet } = useWallet();
+	const balance = state.balance;
+	const validateMeter = async (data) => {
     try {
       const response = await vasServices.validateMeter(data);
       console.log(response);
@@ -58,15 +57,25 @@ const Electricity = (props) => {
 	
 
   const electric = async (data) => {
+	const { amount } = data;
+    if (balance < amount) {
+      console.log("Insufficient balance");
+    } else {
     let response = await vasServices.electric(data);
-    console.log(response);
-    //  if (response.status === successful) {
-	// 		setMessage("Successful");
-	// 		// navigate("/");
-	// 	  } else {
-	// 		setMessage(response.message);
-	// 	  }
-    };
+    // console.log(response);
+    reduceWallet(amount);
+
+      console.log("Transaction successful");
+      // if (response.status === true) {
+      //   setMessage(response.message);
+      //   setInitialized(2);
+      //   setLoading(false);
+      // } else {
+      //   setMessage(response.message);
+      //   setLoading(false);
+      // }
+    }
+  };
 
  
 	return (

@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
 import dataTypes from "../Plans/dataTypes.json";
-import { propTypes } from "react-bootstrap/esm/Image";
+//import { propTypes } from "react-bootstrap/esm/Image";
 
 const BuyData = (props) => {
   // console.log(props)
@@ -83,7 +83,9 @@ const BuyData = (props) => {
                         {data.title}
                       </option>
                     ))}
+
                 </Form.Select>
+                
                 <Form.Group>
                   <Form.Label className='label phone-label'>
                     Phone Number

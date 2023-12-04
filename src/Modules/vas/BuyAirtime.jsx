@@ -1,4 +1,5 @@
 /** @format */
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,25 +7,68 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Header from "../../Components/Header";
 import Sidebar from "../../Components/Sidebar";
-
-import { useState } from "react";
+import { useWallet } from "../../Components/Wallet";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
+import Modal from "react-bootstrap/Modal";
 
 const BuyAirtime = (props) => {
-  // let [message, setMessage] = useState("");
-  const { handleSubmit, register } = useForm();
+  const { state, reduceWallet } = useWallet();
+  const { handleSubmit, register, watch } = useForm();
+  const [amountToPay, setAmountToPay] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [transactionDetails, setTransactionDetails] = useState({
+    network: "",
+    airtime_type: "",
+    mobile_number: "",
+    amount: 0,
+  });
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
+  const balance = state.balance;
 
   const airTime = async (data) => {
-    let response = await vasServices.airTime(data);
-    // if (response.status === true) {
-    //   setMessage(response.message);
-    //   setInitialized(2);
-    //   setLoading(false);
-    // } else {
-    //   setMessage(response.message);
-    //   setLoading(false);
-    // }
+    const { amount, network, airtime_type, mobile_number } = data;
+
+    if (balance < amount) {
+      console.log("Insufficient balance");
+    } else {
+      // Set transaction details for the modal
+      setTransactionDetails({
+        network,
+        airtime_type,
+        mobile_number,
+        amount,
+      });
+
+      // Show the modal
+      handleShow();
+      let response = await vasServices.airTime(data);
+      reduceWallet(amountToPay);
+
+      console.log("Transaction successful");
+      // if (response.status === true) {
+      //   setMessage(response.message);
+      //   setInitialized(2);
+      //   setLoading(false);
+      // } else {
+      //   setMessage(response.message);
+      //   setLoading(false);
+      // }
+    }
+  };
+
+  const updateAmountToPay = () => {
+    const enteredAmount = parseFloat(watch("amount"));
+    if (!isNaN(enteredAmount)) {
+      // Subtract 2% from the entered amount
+      const amountToPay = enteredAmount - enteredAmount * 0.02;
+      // Round to 2 decimal places
+      const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
+      setAmountToPay(roundedAmountToPay);
+    }
   };
 
   return (
@@ -74,10 +118,10 @@ const BuyAirtime = (props) => {
                 <Form.Group>
                   <Form.Label className='label'>Amount</Form.Label>
                   <Form.Control
-                    type='number'
+                    type=''
                     placeholder='Enter your amount'
                     className='mb-3'
-                    {...register("amount")}
+                    {...register("amount", { onChange: updateAmountToPay })}
                   />
                 </Form.Group>
                 <Form.Group>
@@ -85,15 +129,46 @@ const BuyAirtime = (props) => {
                     Amount to pay
                   </Form.Label>
                   <Form.Control
-                    type='phone-number'
-                    placeholder='200'
+                    type='text'
+                    value={amountToPay}
+                    readOnly
                     className='mb-3'
                   />
                 </Form.Group>
-                <Button className='Buy-now-btn' type='submit'>
-                  Buy Now
-                </Button>{" "}
-              </Form>
+                  <Button className="Buy-now-btn" onClick={handleShow}>
+                    Buy Now
+                  </Button> 
+                 </Form>
+
+              {/* Modal for displaying transaction details */}
+              <Modal
+                show={showModal}
+                size='lg'
+                aria-labelledby='contained-modal-title-vcenter'
+                centered
+                onHide={handleClose}>
+                <Modal.Header>
+                  <Modal.Title>Transaction Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <p>
+                    You're about to send {transactionDetails.network}{" "}
+                    {transactionDetails.airtime_type} ₦
+                    {transactionDetails.amount} to{" "}
+                    {transactionDetails.mobile_number}
+                    
+                  </p>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant='secondary' onClick={handleClose}>
+                    Close
+                  </Button>
+                  {/* Proceed button can submit the form */}
+                  <Button variant='primary' type='submit' onClick={handleClose}>
+                    Proceed
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </Col>
             {/* <Col sm={4} xs={{ order: '' }}>sm=4</Col> */}
           </Row>

@@ -17,6 +17,9 @@ import {
 import { Link } from "react-router-dom";
 
 const MobileSidebar = () => {
+
+	
+
 	return (
 		<side className="sidebar ">
 			<div className=" ">
@@ -30,7 +33,7 @@ const MobileSidebar = () => {
 				<hr />
 				<ul className="sidebar-list mobile-list">
 					<li>
-						<Link to="/Dashboard">
+						<Link to="/Dashboard" >
 							<FontAwesomeIcon icon={faHouseChimney} className="icon" />
 							Dashboard
 						</Link>
