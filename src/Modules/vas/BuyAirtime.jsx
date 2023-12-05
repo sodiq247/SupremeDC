@@ -17,6 +17,7 @@ const BuyAirtime = (props) => {
   const { handleSubmit, register, watch } = useForm();
   const [amountToPay, setAmountToPay] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
   const [transactionDetails, setTransactionDetails] = useState({
     network: "",
     airtime_type: "",
@@ -29,11 +30,14 @@ const BuyAirtime = (props) => {
 
   const balance = state.balance;
 
-  const airTime = async (data) => {
+  const airtime = async (data) => {
+    setShowModal(true);
     const { amount, network, airtime_type, mobile_number } = data;
 
     if (balance < amount) {
+      setShowModal(false);
       console.log("Insufficient balance");
+      setMessage("Insufficient balance");
     } else {
       // Set transaction details for the modal
       setTransactionDetails({
@@ -45,18 +49,29 @@ const BuyAirtime = (props) => {
 
       // Show the modal
       handleShow();
+      console.log("Waiting for proceed");
+    }
+  };
+
+  const handleProceed = async () => {
+    try {
+      const data = {
+        amount: watch("amount"),
+        network: watch("network"),
+        airtime_type: watch("airtime_type"),
+        mobile_number: watch("mobile_number"),
+      };
+
       let response = await vasServices.airTime(data);
       reduceWallet(amountToPay);
 
       console.log("Transaction successful");
-      // if (response.status === true) {
-      //   setMessage(response.message);
-      //   setInitialized(2);
-      //   setLoading(false);
-      // } else {
-      //   setMessage(response.message);
-      //   setLoading(false);
-      // }
+      setMessage("Transaction successful");
+      setShowModal(false);
+      // Handle the response as needed
+    } catch (error) {
+      console.error("Error occurred during transaction:", error);
+      // Handle error as needed
     }
   };
 
@@ -80,7 +95,8 @@ const BuyAirtime = (props) => {
         <div className='BuyData-submain Form-submain'>
           <Row>
             <Col sm={8} xs={{ order: "" }} className='BuyData-form'>
-              <Form onSubmit={handleSubmit(airTime)}>
+              <Form onSubmit={handleSubmit(airtime)}>
+                {message && <div className='alert alert-info'>{message}</div>}
                 <Form.Label className='label'>Network</Form.Label>
                 <Form.Select
                   aria-label='Default select example'
@@ -135,40 +151,43 @@ const BuyAirtime = (props) => {
                     className='mb-3'
                   />
                 </Form.Group>
-                  <Button className="Buy-now-btn" onClick={handleShow}>
-                    Buy Now
-                  </Button> 
-                 </Form>
-
-              {/* Modal for displaying transaction details */}
-              <Modal
-                show={showModal}
-                size='lg'
-                aria-labelledby='contained-modal-title-vcenter'
-                centered
-                onHide={handleClose}>
-                <Modal.Header>
-                  <Modal.Title>Transaction Details</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <p>
-                    You're about to send {transactionDetails.network}{" "}
-                    {transactionDetails.airtime_type} ₦
-                    {transactionDetails.amount} to{" "}
-                    {transactionDetails.mobile_number}
-                    
-                  </p>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant='secondary' onClick={handleClose}>
-                    Close
-                  </Button>
-                  {/* Proceed button can submit the form */}
-                  <Button variant='primary' type='submit' onClick={handleClose}>
-                    Proceed
-                  </Button>
-                </Modal.Footer>
-              </Modal>
+                <Button className='Buy-now-btn' type='submit' onClick={airtime}>
+                  Buy Now
+                </Button>
+                {/* Modal for displaying transaction details */}
+                <Modal
+                  show={showModal}
+                  size='lg'
+                  aria-labelledby='contained-modal-title-vcenter'
+                  centered
+                  onHide={handleClose}>
+                  <Modal.Header>
+                    <Modal.Title>Transaction Details</Modal.Title>
+                    {/* {message && <div className="alert alert-info">{message}</div>} */}
+                  </Modal.Header>
+                  <Modal.Body>
+                    <p>
+                      You're about to send{" "}
+                      {/* {transactionDetails.network}{" "} */}
+                      {/* {transactionDetails.airtime_type}  */}₦
+                      {transactionDetails.amount} Airtime to{" "}
+                      {transactionDetails.mobile_number}
+                    </p>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant='secondary' onClick={handleClose}>
+                      Close
+                    </Button>
+                    {/* Proceed button can submit the form */}
+                    <Button
+                      variant='primary'
+                      type='submit'
+                      onClick={handleProceed}>
+                      Proceed
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </Form>
             </Col>
             {/* <Col sm={4} xs={{ order: '' }}>sm=4</Col> */}
           </Row>
