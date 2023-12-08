@@ -16,13 +16,17 @@ import { useWallet } from "../../Components/Wallet";
 // import { Alert } from "react-bootstrap";
 
 const Electricity = (props) => {
-	const [message, setMessage] = useState("");
-	const { handleSubmit, register } = useForm();
+	
+	const { handleSubmit, register, watch } = useForm();
 	const [show, setShow] = useState(false);
-  	const handleClose = () => setShow(false);
-  	const handleShow = () => setShow(true);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	const { state, reduceWallet } = useWallet();
+	const [amountToPay, setAmountToPay] = useState(0);
+	const [message, setMessage] = useState("");
+
 	const balance = state.balance;
+
 	const validateMeter = async (data) => {
     try {
       const response = await vasServices.validateMeter(data);
@@ -60,12 +64,14 @@ const Electricity = (props) => {
 	const { amount } = data;
     if (balance < amount) {
       console.log("Insufficient balance");
+	  setMessage("Insufficient balance");
     } else {
     let response = await vasServices.electric(data);
     // console.log(response);
-    reduceWallet(amount);
+    reduceWallet(amountToPay);
 
       console.log("Transaction successful");
+      setMessage("Transaction successful");
       // if (response.status === true) {
       //   setMessage(response.message);
       //   setInitialized(2);
@@ -77,7 +83,17 @@ const Electricity = (props) => {
     }
   };
 
- 
+  const updateAmountToPay = () => {
+    const enteredAmount = parseFloat(watch("amount"));
+    if (!isNaN(enteredAmount)) {
+      // Subtract 2% from the entered amount
+      const amountToPay = enteredAmount - enteredAmount * 0.02;
+      // Round to 2 decimal places
+      const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
+      setAmountToPay(roundedAmountToPay);
+    }
+  };
+
 	return (
 		<div>
 			<Header />
@@ -89,6 +105,7 @@ const Electricity = (props) => {
 
 
 						<Form className=" input-form" id="validate-form" onSubmit={handleSubmit(validateMeter)}>
+
 								<Form.Label className="label">Dico Name
 								</Form.Label>
 						<Form.Select
@@ -134,6 +151,8 @@ const Electricity = (props) => {
 								
 						</Form>
 						<Form className="d-none input-form" id="electric-form" onSubmit={handleSubmit(electric)}>
+						{message && <div className="alert alert-info">{message}</div>}		
+
 								<Form.Label className="label">Dico Name</Form.Label>
 								<Form.Select
 									aria-label="Default select example"
@@ -181,10 +200,10 @@ const Electricity = (props) => {
 										type="phone-number"
 										placeholder="200"
 										className="mb-3"
-										{...register("amount")}
+										{...register("amount", { onChange: updateAmountToPay })}
 									/>
 								</Form.Group>
-								<Form.Group>
+								{/* <Form.Group>
 									<Form.Label className="align-left">
 										Customer Phone Number
 									</Form.Label>
@@ -194,15 +213,14 @@ const Electricity = (props) => {
 										className="mb-3"
 										// {...register("network")}
 									/>
-								</Form.Group>
+								</Form.Group> */}
 								{/* <p className='mb-3 plan-note'>Customer phone number</p> */}
 								<Form.Group>
-									{/* <Form.Label className='label'>Amount</Form.Label> */}
+									<Form.Label className='label'>0.2 Percent Discount</Form.Label>
 									<Form.Control
 										type="phone-number"
-										placeholder="0.5 Percent Discount"
+										value={amountToPay}
 										className="mb-3"
-										// {...register("network")}
 									/>
 								</Form.Group>
 								<Button className="Buy-now-btn" type="submit">Buy now</Button>{" "}

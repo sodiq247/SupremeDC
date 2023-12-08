@@ -3,270 +3,49 @@
     {
     "id":"51",
     "type":"sme",
-    "title":"500.0MB SME MTN ₦125.0 30 days"
+    "title":"500.0MB SME MTN ₦125.0 30 days",
+    "amount":"500",
+    "network":"mtn"
     },
     {
     "id":"52",
-    "type":"sme",
-    "title":"200.0MB SME MTN ₦125.0 30 days"
+    "type":"cg",
+    "title":"200.0MB cg MTN ₦125.0 30 days",
+    "amount":"500",
+    "network":"mtn"
     },
     {
     "id":"53",
-    "type":"sme",
-    "title":"300.0MB SME MTN ₦125.0 30 days"
-    },
-    {
-      "id":"52",
-      "type":"sme",
-      "title":"200.0MB SME GLO ₦125.0 30 days"
-      },
-      {
-        "id":"52",
-        "type":"sme",
-        "title":"200.0MB SME GLO ₦125.0 30 days"
-        },
-        {
-          "id":"52",
-          "type":"sme",
-          "title":"200.0MB SME GLO ₦125.0 30 days"
-          },
-          {
-            "id":"52",
-            "type":"sme",
-            "title":"200.0MB SME AIRTEL ₦125.0 30 days"
-            },
-            {
-              "id":"52",
-              "type":"sme",
-              "title":"200.0MB SME AIRTEL ₦125.0 30 days"
-              },
-              {
-                "id":"52",
-                "type":"sme",
-                "title":"200.0MB SME AIRTEL ₦125.0 30 days"
-                },
-                {
-                  "id":"52",
-                  "type":"sme",
-                  "title":"200.0MB SME 9MOBILE ₦125.0 30 days"
-                  },
-                  {
-                    "id":"52",
-                    "type":"sme",
-                    "title":"200.0MB SME 9MOBILE ₦125.0 30 days"
-                    },
-                    {
-                      "id":"52",
-                      "type":"sme",
-                      "title":"200.0MB SME 9MOBILE ₦125.0 30 days"
-                      }
+    "type":"gifting",
+    "title":"300.0MB gifting MTN ₦125.0 30 days",
+    "amount":"500",
+    "network":"mtn"
+    }
   ],
   "2":[
     {
-    "id":"270",
-    "type":"CORPORATE GIFTING",
-    "title":"50.0MB CORPORATE GIFTING MTN ₦35.0 30 days"
-    },
-    {
-      "id":"271",
-      "type":"CORPORATE GIFTING",
-      "title":"150.0 MB CORPORATE GIFTING MTN ₦65.0 30 days"
-      },
-      {
-        "id":"272",
-        "type":"CORPORATE GIFTING",
-        "title":"250.0 MB CORPORATE GIFTING MTN ₦85.0 30 days"
-        },
-    {
-    "id":"213",
-    "type":"CORPORATE GIFTING",
-    "title":"1.0GB CORPORATE GIFTING MTN ₦228.0 30 days"
-    },
-    {
-    "id":"215",
-    "type":"CORPORATE GIFTING",
-    "title":"2.0GB CORPORATE GIFTING MTN ₦456.0 30 days"
-    },
-    {
-      "id":"216",
-      "type":"CORPORATE GIFTING",
-      "title":"3.0GB CORPORATE GIFTING MTN ₦684.0 30 days"
-      },
-      {
-        "id":"217",
-        "type":"CORPORATE GIFTING",
-        "title":"5.0GB CORPORATE GIFTING MTN ₦1140.0 30 days"
-        },
-    {
-      "id":"52",
-      "type":"CORPORATE GIFTING",
-      "title":"200.0MB CORPORATE GIFTING GLO ₦125.0 30 days"
-      },
-      {
-        "id":"52",
-        "type":"CORPORATE GIFTING",
-        "title":"200.0MB CORPORATE GIFTING GLO ₦125.0 30 days"
-        },
-        {
-          "id":"52",
-          "type":"CORPORATE GIFTING",
-          "title":"200.0MB CORPORATE GIFTING GLO ₦125.0 30 days"
-          },
-          {
-            "id":"52",
-            "type":"CORPORATE GIFTING",
-            "title":"200.0MB CORPORATE GIFTING AIRTEL ₦125.0 30 days"
-            },
-            {
-              "id":"52",
-              "type":"CORPORATE GIFTING",
-              "title":"200.0MB CORPORATE GIFTING AIRTEL ₦125.0 30 days"
-              },
-              {
-                "id":"52",
-                "type":"CORPORATE GIFTING",
-                "title":"200.0MB CORPORATE GIFTING AIRTEL ₦125.0 30 days"
-                },
-                {
-                  "id":"52",
-                  "type":"CORPORATE GIFTING",
-                  "title":"200.0MB CORPORATE GIFTING 9MOBILE ₦125.0 30 days"
-                  },
-                  {
-                    "id":"52",
-                    "type":"CORPORATE GIFTING",
-                    "title":"200.0MB CORPORATE GIFTING 9MOBILE ₦125.0 30 days"
-                    },
-                    {
-                      "id":"52",
-                      "type":"CORPORATE GIFTING",
-                      "title":"200.0MB CORPORATE GIFTING 9MOBILE ₦125.0 30 days"
-                      }
-  ],
-  "3":[
-    {
     "id":"51",
-    "type":"GIFTING",
-    "title":"500.0MB GIFTING MTN ₦125.0 30 days"
+    "type":"sme",
+    "title":"500.0MB SME glo ₦125.0 30 days",
+    "amount":"500",
+    "network":"glo"
     },
     {
     "id":"52",
-    "type":"GIFTING",
-    "title":"200.0MB GIFTING MTN ₦125.0 30 days"
+    "type":"cg",
+    "title":"200.0MB cg glo ₦125.0 30 days",
+    "amount":"500",
+    "network":"glo"
     },
     {
     "id":"53",
-    "type":"GIFTING",
-    "title":"300.0MB GIFTING MTN ₦125.0 30 days"
-    },
-    {
-      "id":"52",
-      "type":"GIFTING",
-      "title":"200.0MB GIFTING GLO ₦125.0 30 days"
-      },
-      {
-        "id":"52",
-        "type":"GIFTING",
-        "title":"200.0MB GIFTING GLO ₦125.0 30 days"
-        },
-        {
-          "id":"52",
-          "type":"GIFTING",
-          "title":"200.0MB GIFTING GLO ₦125.0 30 days"
-          },
-          {
-            "id":"52",
-            "type":"GIFTING",
-            "title":"200.0MB GIFTING AIRTEL ₦125.0 30 days"
-            },
-            {
-              "id":"52",
-              "type":"GIFTING",
-              "title":"200.0MB GIFTING AIRTEL ₦125.0 30 days"
-              },
-              {
-                "id":"52",
-                "type":"GIFTING",
-                "title":"200.0MB GIFTING AIRTEL ₦125.0 30 days"
-                },
-                {
-                  "id":"52",
-                  "type":"GIFTING",
-                  "title":"200.0MB GIFTING 9MOBILE ₦125.0 30 days"
-                  },
-                  {
-                    "id":"52",
-                    "type":"GIFTING",
-                    "title":"200.0MB GIFTING 9MOBILE ₦125.0 30 days"
-                    },
-                    {
-                      "id":"52",
-                      "type":"GIFTING",
-                      "title":"200.0MB GIFTING 9MOBILE ₦125.0 30 days"
-                      }
-  ],
-  "4":[
-    {
-    "id":"51",
-    "type":"DIRECT",
-    "title":"500.0MB DIRECT MTN ₦125.0 30 days"
-    },
-    {
-    "id":"52",
-    "type":"DIRECT",
-    "title":"200.0MB DIRECT MTN ₦125.0 30 days"
-    },
-    {
-    "id":"53",
-    "type":"DIRECT",
-    "title":"300.0MB DIRECT MTN ₦125.0 30 days"
-    },
-    {
-      "id":"52",
-      "type":"DIRECT",
-      "title":"200.0MB DIRECT GLO ₦125.0 30 days"
-      },
-      {
-        "id":"52",
-        "type":"DIRECT",
-        "title":"200.0MB DIRECT GLO ₦125.0 30 days"
-        },
-        {
-          "id":"52",
-          "type":"DIRECT",
-          "title":"200.0MB DIRECT GLO ₦125.0 30 days"
-          },
-          {
-            "id":"52",
-            "type":"DIRECT",
-            "title":"200.0MB DIRECT AIRTEL ₦125.0 30 days"
-            },
-            {
-              "id":"52",
-              "type":"DIRECT",
-              "title":"200.0MB DIRECT AIRTEL ₦125.0 30 days"
-              },
-              {
-                "id":"52",
-                "type":"DIRECT",
-                "title":"200.0MB DIRECT AIRTEL ₦125.0 30 days"
-                },
-                {
-                  "id":"52",
-                  "type":"DIRECT",
-                  "title":"200.0MB DIRECT 9MOBILE ₦125.0 30 days"
-                  },
-                  {
-                    "id":"52",
-                    "type":"DIRECT",
-                    "title":"200.0MB DIRECT 9MOBILE ₦125.0 30 days"
-                    },
-                    {
-                      "id":"52",
-                      "type":"DIRECT",
-                      "title":"200.0MB DIRECT 9MOBILE ₦125.0 30 days"
-                      }
+    "type":"gifting",
+    "title":"300.0MB gifting glo ₦125.0 30 days",
+    "amount":"500",
+    "network":"glo"
+    }
   ]
+ 
       
   }
 

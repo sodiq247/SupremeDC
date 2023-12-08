@@ -29,7 +29,11 @@ const vasServices = {
 	validateMeter: async (data) => {
 		let response = await axios.post(`${baseUrl}validateMeter`, data);
 		return response;
-	}
+	},
+	validateIUC: async (data) => {
+		let response = await axios.post(`${baseUrl}validateIUC`, data);
+		return response;
+	},
 };
 
 export default vasServices;

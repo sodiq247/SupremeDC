@@ -13,10 +13,10 @@ import vasServices from "../../Services/vasServices";
 import Modal from "react-bootstrap/Modal";
 
 const BuyAirtime = (props) => {
-  const { state, reduceWallet } = useWallet();
   const { handleSubmit, register, watch } = useForm();
-  const [amountToPay, setAmountToPay] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const { state, reduceWallet } = useWallet();
+  const [amountToPay, setAmountToPay] = useState(0);
   const [message, setMessage] = useState("");
   const [transactionDetails, setTransactionDetails] = useState({
     network: "",

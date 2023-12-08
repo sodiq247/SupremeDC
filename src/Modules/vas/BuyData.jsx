@@ -11,29 +11,72 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import vasServices from "../../Services/vasServices";
 import dataTypes from "../Plans/dataTypes.json";
+import { useWallet } from "../../Components/Wallet";
 //import { propTypes } from "react-bootstrap/esm/Image";
 
 const BuyData = (props) => {
   // console.log(props)
   //   let [message, setMessage] = useState("");
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, watch } = useForm();
+  const { state, reduceWallet } = useWallet();
+  const [selectedNetwork, setSelectedNetwork] = useState("");
+  const [selectedDataType, setSelectedDataType] = useState("");
+  const [amountToPay, setAmountToPay] = useState(0);
+  const [message, setMessage] = useState("");
+
+  const balance = state.balance;
 
   const dataBundle = async (data) => {
-    // event.preventDefault();
-    // alert(data)
-    let response = await vasServices.dataBundle(data);
-    console.log(response);
-    //  if (response.status === 'successful') {
-    // 		setMessage("Successful");
-    // 		 navigate("/");
-    // 	  } else {
-    // 		setMessage(response.message);
-    // 	  }
+    const { amount } = data;
+    if (balance < amount) {
+      console.log("Insufficient balance");
+      setMessage("Insufficient balance");
+    } else {
+      let response = await vasServices.dataBundle(data);
+      // console.log(response);
+      reduceWallet(amountToPay);
+
+      console.log("Transaction successful");
+      setMessage("Transaction successful");
+      // if (response.status === true) {
+      //   setMessage(response.message);
+      //   setInitialized(2);
+      //   setLoading(false);
+      // } else {
+      //   setMessage(response.message);
+      //   setLoading(false);
+      // }
+    }
   };
-  const [selectedNetwork, setSelectedNetwork] = useState(""); // State to track selected network
+
+  // const [selectedNetwork, setSelectedNetwork] = useState(""); // State to track selected network
   const handleNetworkChange = (event) => {
     setSelectedNetwork(event.target.value);
+    setSelectedDataType(""); // Reset selected data type when the network changes
   };
+
+  const handleDataTypeChange = (event) => {
+    setSelectedDataType(event.target.value);
+  };
+
+  const updateAmountToPay = () => {
+    const selectedPlanId = watch("plan"); // Get the selected plan ID from the form
+
+    if (selectedPlanId) {
+      // Find the selected plan in the JSON data
+      const selectedPlan = dataTypes[selectedNetwork].find(
+        (plan) => plan.id === selectedPlanId
+      );
+
+      if (selectedPlan) {
+        // Extract the amount from the selected plan and update the state
+        const amount = parseFloat(selectedPlan.amount);
+        const roundedAmountToPay = Math.round((amount + 50) * 100) / 100;
+        setAmountToPay(roundedAmountToPay);
+      }
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -42,14 +85,15 @@ const BuyData = (props) => {
         <div className='BuyData-submain Form-submain'>
           <Row>
             <Col sm={8} xs={{ order: "" }} className='BuyData-form'>
-              {/* {message && <div className="alert alert-info">{message}</div>} */}
+              {message && <div className='alert alert-info'>{message}</div>}
               {/* <Form onSubmit={(e) => handleSubmit((data) => dataBundle(data, e))}> */}
               <Form onSubmit={handleSubmit(dataBundle)}>
                 <Form.Label className='label'>Network</Form.Label>
                 <Form.Select
                   aria-label='Default select example'
                   className='mb-3'
-                  {...register("network")}>
+                  {...register("network")}
+                  onChange={handleNetworkChange}>
                   <option value=''>Select a network</option>
                   <option value='1'>MTN</option>
                   <option value='2'>GLO</option>
@@ -60,13 +104,12 @@ const BuyData = (props) => {
                 <Form.Select
                   aria-label='Select a network'
                   className='mb-3'
-                  value={selectedNetwork}
-                  onChange={handleNetworkChange}>
+                  value={selectedDataType}
+                  onChange={handleDataTypeChange}>
                   <option value=''>Select a data type</option>
-                  <option value='1'>SME</option>
-                  <option value='2'>Corporate Gifting</option>
-                  <option value='3'>Gifting</option>
-                  <option value='4'>Direct</option>
+                  <option value='sme'>SME</option>
+                  <option value='cg'>Corporate Gifting</option>
+                  <option value='gifting'>Gifting</option>
                 </Form.Select>
                 <p className='mb-3 plan-note'>
                   Select Plan Type SME or GIFTING or CORPORATE GIFTING
@@ -75,7 +118,8 @@ const BuyData = (props) => {
                 <Form.Select
                   aria-label='Default select example'
                   className='mb-3'
-                  {...register("plan")}>
+                  {...register("plan", { onChange: updateAmountToPay })}
+                  value={watch("plan")}>
                   <option value=''>Select a plan</option>
                   {selectedNetwork &&
                     dataTypes[selectedNetwork].map((data, index) => (
@@ -83,9 +127,7 @@ const BuyData = (props) => {
                         {data.title}
                       </option>
                     ))}
-
                 </Form.Select>
-                
                 <Form.Group>
                   <Form.Label className='label phone-label'>
                     Phone Number
@@ -98,11 +140,21 @@ const BuyData = (props) => {
                     {...register("mobile_number")}
                   />
                 </Form.Group>
+                {/* <Form.Group>
+									<Form.Label className="label">Amount</Form.Label>
+									<Form.Control
+										type="phone-number"
+										placeholder="200"
+										className="mb-3"
+                    value={data.amount}
+										{...register("amount", { onChange: updateAmountToPay })}
+									/>
+                </Form.Group> */}
                 <Form.Group>
                   <Form.Label className='label'>Amount</Form.Label>
                   <Form.Control
                     type='phone-number'
-                    placeholder='200'
+                    value={amountToPay}
                     className='mb-3'
                   />
                 </Form.Group>
