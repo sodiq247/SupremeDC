@@ -29,7 +29,7 @@ const Sidebar = () => {
           <p className='profile-name'>Abdulrazaq sodiq</p>
         </div>
         <div className='wallet-balance'>
-          Wallet Balance: <br /> ₦{state.balance}.00
+          Wallet Balance: <br /> ₦{state.balance}
         </div>
         <hr />
         <ul className='sidebar-list'>

@@ -1,51 +1,299 @@
 {
-  "1":[
-    {
-    "id":"51",
-    "type":"sme",
-    "title":"500.0MB SME MTN ₦125.0 30 days",
-    "amount":"500",
-    "network":"mtn"
-    },
-    {
-    "id":"52",
-    "type":"cg",
-    "title":"200.0MB cg MTN ₦125.0 30 days",
-    "amount":"500",
-    "network":"mtn"
-    },
-    {
-    "id":"53",
-    "type":"gifting",
-    "title":"300.0MB gifting MTN ₦125.0 30 days",
-    "amount":"500",
-    "network":"mtn"
-    }
-  ],
-  "2":[
-    {
-    "id":"51",
-    "type":"sme",
-    "title":"500.0MB SME glo ₦125.0 30 days",
-    "amount":"500",
-    "network":"glo"
-    },
-    {
-    "id":"52",
-    "type":"cg",
-    "title":"200.0MB cg glo ₦125.0 30 days",
-    "amount":"500",
-    "network":"glo"
-    },
-    {
-    "id":"53",
-    "type":"gifting",
-    "title":"300.0MB gifting glo ₦125.0 30 days",
-    "amount":"500",
-    "network":"glo"
-    }
-  ]
- 
-      
+  "1": {
+    "sme": [
+      {
+        "id": "179",
+        "type": "sme",
+        "title": "500.0 MB SME MTN ₦147 30 days",
+        "amount": "122.5",
+        "network": "mtn"
+      },
+      {
+        "id": "166",
+        "type": "sme",
+        "title": "1.0 GB SME MTN ₦294 30 days",
+        "amount": "245",
+        "network": "mtn"
+      },
+      {
+        "id": "167",
+        "type": "sme",
+        "title": "2.0 GB GB SME MTN ₦588 30 days",
+        "amount": "490.0",
+        "network": "mtn"
+      },
+      {
+        "id": "168",
+        "type": "sme",
+        "title": "3.0 GB SME MTN ₦882 30 days",
+        "amount": "735.0",
+        "network": "mtn"
+      },
+      {
+        "id": "169",
+        "type": "sme",
+        "title": "5.0 GB SME MTN ₦1470 30 days",
+        "amount": "1225.0",
+        "network": "mtn"
+      },
+      {
+        "id": "260",
+        "type": "sme",
+        "title": "10.0 GB SME MTN ₦2940 30 days",
+        "amount": "2450.0",
+        "network": "mtn"
+      },
+      {
+        "id": "317",
+        "type": "sme",
+        "title": "500.0 GB SME MTN ₦1293600000 90 days",
+        "amount": "1078000000.0",
+        "network": "mtn"
+      },
+      {
+        "id": "320",
+        "type": "sme",
+        "title": "1.0 TB SME MTN ₦2562000000 90 days",
+        "amount": "2135000000.0",
+        "network": "mtn"
+      }
+    ],
+    "cg": [
+      {
+        "id": "270",
+        "type": "cg",
+        "title": "50.0MB CORPORATE GIFTING MTN ₦18 30 days",
+        "amount": "15.0",
+        "network": "mtn"
+      },
+      {
+        "id": "271",
+        "type": "cg",
+        "title": "150.0MB CORPORATE GIFTING MTN ₦54 30 days",
+        "amount": "45.0",
+        "network": "mtn"
+      },
+      {
+        "id": "272",
+        "type": "cg",
+        "title": "250.0MB CORPORATE GIFTING MTN ₦72 30 days",
+        "amount": "60.0",
+        "network": "mtn"
+      },
+      {
+        "id": "225",
+        "type": "cg",
+        "title": "500.0MB CORPORATE GIFTING MTN ₦147 30 days",
+        "amount": "122.5",
+        "network": "mtn"
+      },
+      {
+        "id": "213",
+        "type": "cg",
+        "title": "1.0 GB CORPORATE GIFTING MTN ₦294 30 days",
+        "amount": "245.0",
+        "network": "mtn"
+      },
+      {
+        "id": "215",
+        "type": "cg",
+        "title": "2.0 GB CORPORATE GIFTING MTN ₦588 30 days",
+        "amount": "490.0",
+        "network": "mtn"
+      },
+      {
+        "id": "216",
+        "type": "cg",
+        "title": "3.0 GB CORPORATE GIFTING MTN ₦882 30 days",
+        "amount": "735.0",
+        "network": "mtn"
+      },
+      {
+        "id": "217",
+        "type": "cg",
+        "title": "5.0 GB CORPORATE GIFTING MTN ₦1470 30 days",
+        "amount": "1225.0",
+        "network": "mtn"
+      },
+      {
+        "id": "257",
+        "type": "cg",
+        "title": "10.0 GB CORPORATE GIFTING MTN ₦2940 30 days",
+        "amount": "2450.0",
+        "network": "mtn"
+      },
+      {
+        "id": "284",
+        "type": "cg",
+        "title": "12.0 GB CORPORATE GIFTING MTN ₦3528 30 days",
+        "amount": "2940.0",
+        "network": "mtn"
+      },
+      {
+        "id": "259",
+        "type": "cg",
+        "title": "15.0 GB CORPORATE GIFTING MTN ₦4410 30 days",
+        "amount": "3675.0",
+        "network": "mtn"
+      },
+      {
+        "id": "258",
+        "type": "cg",
+        "title": "20.0 GB CORPORATE GIFTING MTN ₦5880 30 days",
+        "amount": "4900.0",
+        "network": "mtn"
+      },
+      {
+        "id": "282",
+        "type": "cg",
+        "title": "50.0 GB CORPORATE GIFTING MTN ₦14700 30 days",
+        "amount": "12250.0",
+        "network": "mtn"
+      },
+      {
+        "id": "283",
+        "type": "cg",
+        "title": "60.0 GB CORPORATE GIFTING MTN ₦17280 30 days",
+        "amount": "14400.0",
+        "network": "mtn"
+      },
+      {
+        "id": "318",
+        "type": "cg",
+        "title": "500.0 GB CORPORATE GIFTING MTN ₦133680000 30 days",
+        "amount": "111400000.0",
+        "network": "mtn"
+      },
+      {
+        "id": "321",
+        "type": "cg",
+        "title": "1.0 TB CORPORATE GIFTING MTN ₦291600 30 days",
+        "amount": "243000.0",
+        "network": "mtn"
+      }
+    ],
+    "gifting": [
+     
+      {
+        "id": "395",
+        "type": "gifting",
+        "title": "1.5 GB gifting MTN ₦564 7 days",
+        "amount": "470.0",
+        "network": "mtn"
+      },
+      {
+        "id": "397",
+        "type": "gifting",
+        "title": "7.0 GB gifting MTN ₦2256 7 days",
+        "amount": "1880.0",
+        "network": "mtn"
+      },
+      {
+        "id": "402",
+        "type": "gifting",
+        "title": "5.0 GB gifting MTN ₦1692 30 days",
+        "amount": "1410.0",
+        "network": "mtn"
+      },
+      {
+        "id": "401",
+        "type": "gifting",
+        "title": "8.0 GB gifting MTN ₦3600 30 days",
+        "amount": "3000.0",
+        "network": "mtn"
+      },
+      {
+        "id": "404",
+        "type": "gifting",
+        "title": "11.0 GB gifting MTN ₦4200 30 days",
+        "amount": "3500.0",
+        "network": "mtn"
+      },
+      {
+        "id": "406",
+        "type": "gifting",
+        "title": "22.0 GB gifting MTN ₦6600 30 days",
+        "amount": "5500.0",
+        "network": "mtn"
+      },
+      {
+        "id": "407",
+        "type": "gifting",
+        "title": "27.0 GB gifting MTN ₦7800 30 days",
+        "amount": "6500.0",
+        "network": "mtn"
+      },
+      {
+        "id": "410",
+        "type": "gifting",
+        "title": "30.0 GB gifting MTN ₦9600 30 days",
+        "amount": "8000.0",
+        "network": "mtn"
+      },
+      {
+        "id": "315",
+        "type": "gifting",
+        "title": "120.0 GB gifting MTN ₦24816 30 days",
+        "amount": "20680.0",
+        "network": "mtn"
+      },
+      {
+        "id": "316",
+        "type": "gifting",
+        "title": "200.0 GB gifting MTN ₦33840 30 days",
+        "amount": "28200.0",
+        "network": "mtn"
+      }
+    ]
+  },
+  "2": {
+    "sme": [
+      {
+        "id": "51",
+        "type": "sme",
+        "title": "500.0MB sme glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      },
+      {
+        "id": "52",
+        "type": "sme",
+        "title": "200.0MB sme glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      }
+    ],
+    "cg": [
+      {
+        "id": "51",
+        "type": "cg",
+        "title": "500.0MB cg glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      },
+      {
+        "id": "52",
+        "type": "cg",
+        "title": "200.0MB cg glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      }
+    ],
+    "gifting": [
+      {
+        "id": "51",
+        "type": "gifting",
+        "title": "500.0MB gifting glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      },
+      {
+        "id": "52",
+        "type": "gifting",
+        "title": "200.0MB gifting glo ₦125.0 30 days",
+        "amount": "500",
+        "network": "glo"
+      }
+    ]
   }
-
+}

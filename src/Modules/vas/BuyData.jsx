@@ -20,6 +20,7 @@ const BuyData = (props) => {
   const { handleSubmit, register, watch } = useForm();
   const { state, reduceWallet } = useWallet();
   const [selectedNetwork, setSelectedNetwork] = useState("");
+  const [selectedPlanId, setSelectedPlanId] = useState("");
   const [selectedDataType, setSelectedDataType] = useState("");
   const [amountToPay, setAmountToPay] = useState(0);
   const [message, setMessage] = useState("");
@@ -49,30 +50,43 @@ const BuyData = (props) => {
     }
   };
 
-  // const [selectedNetwork, setSelectedNetwork] = useState(""); // State to track selected network
   const handleNetworkChange = (event) => {
-    setSelectedNetwork(event.target.value);
-    setSelectedDataType(""); // Reset selected data type when the network changes
+    const network = event.target.value;
+    setSelectedNetwork(network);
+
+    // Reset selected plan, data type, and amount when network changes
+    setSelectedPlanId("");
+    setSelectedDataType("");
+    setAmountToPay(0);
   };
 
   const handleDataTypeChange = (event) => {
-    setSelectedDataType(event.target.value);
+    const dataType = event.target.value;
+    setSelectedDataType(dataType);
+
+    // Reset selected plan and amount when data type changes
+    setSelectedPlanId("");
+    setAmountToPay(0);
   };
 
-  const updateAmountToPay = () => {
-    const selectedPlanId = watch("plan"); // Get the selected plan ID from the form
+  const handlePlanChange = (event) => {
+    const planId = event.target.value;
+    setSelectedPlanId(planId);
+    updateAmountToPay(planId);
+  };
 
-    if (selectedPlanId) {
-      // Find the selected plan in the JSON data
-      const selectedPlan = dataTypes[selectedNetwork].find(
-        (plan) => plan.id === selectedPlanId
-      );
+  const updateAmountToPay = (planId) => {
+    if (selectedNetwork && selectedDataType && planId) {
+      const selectedPlans = dataTypes[selectedNetwork][selectedDataType];
+      const selectedPlan = selectedPlans.find((plan) => plan.id === planId);
 
       if (selectedPlan) {
-        // Extract the amount from the selected plan and update the state
         const amount = parseFloat(selectedPlan.amount);
-        const roundedAmountToPay = Math.round((amount + 50) * 100) / 100;
-        setAmountToPay(roundedAmountToPay);
+        
+        const amountToPay = amount + amount * 0.2; // Add 50 to the plan amount
+         // Round to 2 decimal places
+         const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
+         setAmountToPay(roundedAmountToPay);
       }
     }
   };
@@ -111,6 +125,7 @@ const BuyData = (props) => {
                   <option value='cg'>Corporate Gifting</option>
                   <option value='gifting'>Gifting</option>
                 </Form.Select>
+               
                 <p className='mb-3 plan-note'>
                   Select Plan Type SME or GIFTING or CORPORATE GIFTING
                 </p>
@@ -119,13 +134,21 @@ const BuyData = (props) => {
                   aria-label='Default select example'
                   className='mb-3'
                   {...register("plan", { onChange: updateAmountToPay })}
-                  value={watch("plan")}>
-                  <option value=''>Select a plan</option>
+                  value={selectedPlanId}
+                  onChange={handlePlanChange}>
+                  {/* <option value=''>Select a plan</option>
                   {selectedNetwork &&
                     dataTypes[selectedNetwork].map((data, index) => (
                       <option key={index} value={data.id}>
                         {data.title}
-                      </option>
+                      </option> */}
+                       <option value=''>Select a plan</option>
+          {selectedNetwork &&
+            selectedDataType &&
+            dataTypes[selectedNetwork][selectedDataType].map((plan) => (
+              <option key={plan.id} value={plan.id}>
+                {plan.title}
+              </option>
                     ))}
                 </Form.Select>
                 <Form.Group>
@@ -140,21 +163,23 @@ const BuyData = (props) => {
                     {...register("mobile_number")}
                   />
                 </Form.Group>
-                {/* <Form.Group>
-									<Form.Label className="label">Amount</Form.Label>
-									<Form.Control
-										type="phone-number"
-										placeholder="200"
-										className="mb-3"
-                    value={data.amount}
-										{...register("amount", { onChange: updateAmountToPay })}
-									/>
-                </Form.Group> */}
-                <Form.Group>
+               {/* <Form.Group>
                   <Form.Label className='label'>Amount</Form.Label>
                   <Form.Control
-                    type='phone-number'
+                    type=''
+                    placeholder='Enter your amount'
+                    className='mb-3'
+                    {...register("amount", { onChange: updateAmountToPay })}
+                  />
+                </Form.Group> */}
+                <Form.Group>
+                  <Form.Label className='label phone-label'>
+                    Amount to pay
+                  </Form.Label>
+                  <Form.Control
+                    type='text'
                     value={amountToPay}
+                    readOnly
                     className='mb-3'
                   />
                 </Form.Group>
