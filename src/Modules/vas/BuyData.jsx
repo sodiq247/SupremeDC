@@ -15,13 +15,11 @@ import { useWallet } from "../../Components/Wallet";
 //import { propTypes } from "react-bootstrap/esm/Image";
 
 const BuyData = (props) => {
-  // console.log(props)
-  //   let [message, setMessage] = useState("");
-  const { handleSubmit, register, watch } = useForm();
+  const { handleSubmit, register } = useForm();
   const { state, reduceWallet } = useWallet();
   const [selectedNetwork, setSelectedNetwork] = useState("");
-  const [selectedPlanId, setSelectedPlanId] = useState("");
   const [selectedDataType, setSelectedDataType] = useState("");
+  const [selectedPlanId, setSelectedPlanId] = useState("");
   const [amountToPay, setAmountToPay] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -82,11 +80,11 @@ const BuyData = (props) => {
 
       if (selectedPlan) {
         const amount = parseFloat(selectedPlan.amount);
-        
+
         const amountToPay = amount + amount * 0.2; // Add 50 to the plan amount
-         // Round to 2 decimal places
-         const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
-         setAmountToPay(roundedAmountToPay);
+        // Round to 2 decimal places
+        const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
+        setAmountToPay(roundedAmountToPay);
       }
     }
   };
@@ -125,7 +123,6 @@ const BuyData = (props) => {
                   <option value='cg'>Corporate Gifting</option>
                   <option value='gifting'>Gifting</option>
                 </Form.Select>
-               
                 <p className='mb-3 plan-note'>
                   Select Plan Type SME or GIFTING or CORPORATE GIFTING
                 </p>
@@ -136,19 +133,13 @@ const BuyData = (props) => {
                   {...register("plan", { onChange: updateAmountToPay })}
                   value={selectedPlanId}
                   onChange={handlePlanChange}>
-                  {/* <option value=''>Select a plan</option>
+                  <option value=''>Select a plan</option>
                   {selectedNetwork &&
-                    dataTypes[selectedNetwork].map((data, index) => (
-                      <option key={index} value={data.id}>
-                        {data.title}
-                      </option> */}
-                       <option value=''>Select a plan</option>
-          {selectedNetwork &&
-            selectedDataType &&
-            dataTypes[selectedNetwork][selectedDataType].map((plan) => (
-              <option key={plan.id} value={plan.id}>
-                {plan.title}
-              </option>
+                    selectedDataType &&
+                    dataTypes[selectedNetwork][selectedDataType].map((plan) => (
+                      <option key={plan.id} value={plan.id}>
+                        {plan.title}
+                      </option>
                     ))}
                 </Form.Select>
                 <Form.Group>
@@ -163,7 +154,7 @@ const BuyData = (props) => {
                     {...register("mobile_number")}
                   />
                 </Form.Group>
-               {/* <Form.Group>
+                {/* <Form.Group>
                   <Form.Label className='label'>Amount</Form.Label>
                   <Form.Control
                     type=''

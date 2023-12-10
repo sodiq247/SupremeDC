@@ -52,7 +52,7 @@ const WalletContext = createContext();
 
 // Create a provider component
 export const WalletProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(walletReducer, { balance: 1000 });
+  const [state, dispatch] = useReducer(walletReducer, { balance: 5000 });
 
   const addWallet = (amount) => {
     dispatch({ type: "ADD", amount });

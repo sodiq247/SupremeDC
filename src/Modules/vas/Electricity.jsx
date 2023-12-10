@@ -7,7 +7,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Header from "../../Components/Header";
 import Sidebar from "../../Components/Sidebar";
-
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,7 +15,6 @@ import { useWallet } from "../../Components/Wallet";
 // import { Alert } from "react-bootstrap";
 
 const Electricity = (props) => {
-	
 	const { handleSubmit, register, watch } = useForm();
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
@@ -28,10 +26,12 @@ const Electricity = (props) => {
 	const balance = state.balance;
 
 	const validateMeter = async (data) => {
+		console.log('response...', data);
+
     try {
       const response = await vasServices.validateMeter(data);
       console.log(response);
-	  setMessage(response.name);
+	  setMessage(`${response.name} - ${response.address}`);
 	//   console.log(ModalMessage)
     //   if (response.status === "successful") {
     //     setModalMessage(response.name);
@@ -67,7 +67,7 @@ const Electricity = (props) => {
 	  setMessage("Insufficient balance");
     } else {
     let response = await vasServices.electric(data);
-    // console.log(response);
+     console.log(response);
     reduceWallet(amountToPay);
 
       console.log("Transaction successful");

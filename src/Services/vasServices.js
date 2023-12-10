@@ -20,8 +20,8 @@ const vasServices = {
 		});
 		return response;
 	},
-	cabletv: async (data) => {
-		let response = await axios.post(`${baseUrl}cabletv`, data).catch((err) => {
+	cablesub: async (data) => {
+		let response = await axios.post(`${baseUrl}cablesub`, data).catch((err) => {
 			console.log(err);
 		});
 		return response;
