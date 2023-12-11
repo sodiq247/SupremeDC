@@ -34,7 +34,7 @@ const BuyAirtime = (props) => {
     setShowModal(true);
     const { amount, network, airtime_type, mobile_number } = data;
 
-    if (balance < amount) {
+    if (balance < amountToPay ) {
       setShowModal(false);
       console.log("Insufficient balance");
       setMessage("Insufficient balance");

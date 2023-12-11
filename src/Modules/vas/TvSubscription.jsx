@@ -15,7 +15,6 @@ const TvSubscription = (props) => {
   const { state, reduceWallet } = useWallet();
   const [selectedTvType, setSelectedTvType] = useState("");
   const [selectedPlanId, setSelectedPlanId] = useState(""); // Initialize selectedTvPlan here
-  // const [selectedTvPlan, setSelectedTvPlan] = useState(""); // Initialize selectedTvPlan here
   const [amountToPay, setAmountToPay] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -45,8 +44,9 @@ const TvSubscription = (props) => {
   };
 
   const cabletv = async (data) => {
-    const { amount } = data;
-    if (balance < amount) {
+    console.log("response...", data);
+
+    if (balance < amountToPay) {
       console.log("Insufficient balance");
       setMessage("Insufficient balance");
     } else {
@@ -62,26 +62,33 @@ const TvSubscription = (props) => {
   const handleTvTypeChange = (event) => {
     const tvType = event.target.value;
     setSelectedTvType(tvType);
-
     // Reset selected plan and amount when data type changes
     setSelectedPlanId("");
+
     setAmountToPay(0);
   };
 
   const handleTvPlanChange = (event) => {
     const planId = event.target.value;
+
     setSelectedPlanId(planId);
     updateAmountToPay(planId);
   };
 
   const updateAmountToPay = (planId) => {
-    if (planId) {
-      const selectedPlans = tvPlans[planId];
-      const selectedPlan = selectedPlans.find((plan) => plan.id === planId);
+
+    if (selectedTvType && planId) {
+   
+
+      const selectedPlans = tvPlans[selectedTvType][planId];
+      const selectedPlan = selectedPlans
+      console.log("checking..", selectedPlans)
 
       if (selectedPlan) {
         const amount = parseFloat(selectedPlan.amount);
-        const amountToPay = amount + amount * 0.2; // 1.5% discount
+        console.log("amount..", amount)
+        const amountToPay = amount + 100;
+        // const amountToPay = amountCharge - amountCharge * 0.015; // 1.5% discount
         const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
         setAmountToPay(roundedAmountToPay);
         console.log("Updated Amount to Pay:", roundedAmountToPay);

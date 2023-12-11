@@ -80,11 +80,13 @@ const BuyData = (props) => {
 
       if (selectedPlan) {
         const amount = parseFloat(selectedPlan.amount);
-
+        console.log("amount..", amount)
         const amountToPay = amount + amount * 0.2; // Add 50 to the plan amount
         // Round to 2 decimal places
         const roundedAmountToPay = Math.round(amountToPay * 100) / 100;
         setAmountToPay(roundedAmountToPay);
+        console.log("amount..", amountToPay)
+
       }
     }
   };

@@ -3,20 +3,20 @@
     {
     "id":"2",
     "type":"GOTV",
-    "title":"GOtv Max  ₦4850.0",
-    "amount": "122.5"
+    "title":"GOtv Max  ₦5700",
+    "amount": "5700"
     },
     {
     "id":"16",
     "type":"GOTV",
     "title":"GOtv Jinja  ₦2250.0",
-    "amount": "122.5"
+    "amount": "2250.0"
     },
     {
     "id":"17",
     "type":"GOTV",
     "title":"GOtv Smallie-monthly  ₦1100.0",
-    "amount": "122.5"
+    "amount": "5700"
     },
     {
       "id":"35",
@@ -37,7 +37,7 @@
           "amount": "122.5"
           },
           {
-            "id":"52",
+            "id":"58",
             "type":"GOTV",
             "title":"Gotv-supa monthly ₦6400.0",
             "amount": "122.5"
@@ -99,13 +99,13 @@
       "amount": "122.5"
       },
       {
-        "id":"52",
+        "id":"56",
         "type":"DSTV",
         "title":"200.0MB DSTV  ₦125.0",
         "amount": "122.5"
         },
         {
-          "id":"52",
+          "id":"29",
           "type":"DSTV",
           "title":"200.0MB DSTV  ₦125.0",
           "amount": "122.5"
@@ -147,7 +147,7 @@
                       "amount": "122.5"
                       }
   ],
-  "6":[
+  "3":[
     {
     "id":"51",
     "type":"STARTIME",
