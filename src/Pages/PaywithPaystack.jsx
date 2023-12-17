@@ -24,7 +24,7 @@ const PayWithPaystack = () => {
     reference: new Date().getTime().toString(),
     email: email,
     amount: parseInt(amount) * 100, // Convert amount to kobo (assuming it's in Naira)
-    publicKey: "pk_test_2fa77e4d6a3815e581c8f57a3e9c872bd2acd626",
+    publicKey: "",
   };
 
   const handleSuccess = (reference) => {
