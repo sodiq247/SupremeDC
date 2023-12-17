@@ -70,6 +70,12 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
+            <Link to='/PaywithPaystack'>
+              <FontAwesomeIcon icon={faWallet} className='icon' />
+              PaywithPaystack
+            </Link>
+          </li>
+          <li>
             <Link to='/Prices'>
               <FontAwesomeIcon icon={faTag} className='icon' />
               Prices

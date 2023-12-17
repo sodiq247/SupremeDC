@@ -11,6 +11,7 @@ import Settings from "../Pages/Settings";
 import Account from "../Pages/Account";
 import Prices from "../Pages/Prices";
 import FundWallet from "../Pages/FundWallet";
+import PaywithPaystack from "../Pages/PaywithPaystack";
 import Logout from "../Pages/Logout";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
@@ -29,6 +30,7 @@ const Root = () => {
 			<Route path="/Account" Component={Account} />
 			<Route path="/Prices" Component={Prices} />
 			<Route path="/FundWallet" Component={FundWallet} />
+			<Route path="/PaywithPaystack" Component={PaywithPaystack } />
 		</Routes>
 	);
 };
