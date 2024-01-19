@@ -1,38 +1,3 @@
-// import { useState } from "react";
-
-// function Wallet() {
-//   const [wallet, setWallet] = useState(500);
-
-//   const addWallet = (amount) => {
-//     // Use the previous state correctly to update the wallet balance
-//     setWallet((prev) => prev + amount);
-//   };
-
-//   const reduceWallet = (amount) => {
-//     // Use the previous state correctly to update the wallet balance
-//     setWallet((prev) => prev - amount);
-//   };
-
-//   return (
-//     <div>
-//       <p>₦{wallet}.00</p>
-//       <button onClick={() => addWallet(50)}>Add ₦50</button>
-//       <button onClick={() => reduceWallet(50)}>Reduce ₦50</button>
-//     </div>
-//   );
-// }
-
-// export default Wallet;
-
-
-
-
-
-
-
-
-
-// WalletContext.js
 import React, { createContext, useContext, useReducer } from "react";
 
 // Define the wallet reducer

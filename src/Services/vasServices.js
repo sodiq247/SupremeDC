@@ -8,6 +8,10 @@ const vasServices = {
 		let response = await axios.post(`${baseUrl}airtime`, data);
 		return response;
 	},
+	creditWallet: async (data) => {
+		let response = await axios.post(`${baseUrl}creditWallet`, data);
+		return response;
+	},
 	dataBundle: async (data) => {
 		let response = await axios.post(`${baseUrl}data`, data).catch((err) => {
 			console.log(err);
